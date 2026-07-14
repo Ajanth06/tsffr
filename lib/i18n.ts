@@ -19,10 +19,10 @@ export type Dictionary = {
     homeDescription: string;
     aboutTitle: string;
     aboutDescription: string;
+    valuesTitle: string;
+    valuesDescription: string;
   };
   common: {
-    more: string;
-    moreLinks: string;
     openMenu: string;
     brandHome: string;
     backHome: string;
@@ -66,8 +66,6 @@ export type Dictionary = {
     numbers: Array<{ value: string; label: string }>;
     industries: { label: string; title: string };
     industryNames: [string, string, string, string, string, string];
-    team: { label: string; title: string };
-    teamCards: Array<{ title: string; text: string }>;
     quality: { label: string; title: string };
     qualityLead: string;
     qualityItems: Array<{ title: string; text: string }>;
@@ -91,10 +89,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       aboutTitle: "About us | Tinn Silver",
       aboutDescription:
         "More than 80 years of Dutch craftsmanship in custom aluminium workboats, rescue boats and firefighting vessels.",
+      valuesTitle: "Our values | Tinn Silver",
+      valuesDescription:
+        "Engineering, in-house craftsmanship, custom solutions and dependable performance are at the heart of every Tinn Silver vessel.",
     },
     common: {
-      more: "More",
-      moreLinks: "More links",
       openMenu: "Open menu",
       brandHome: "Tinn Silver Fire Fighting and Rescue home",
       backHome: "Back home",
@@ -106,18 +105,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
     nav: [
       { label: "Home", href: "/" },
       { label: "About Us", href: "/about" },
-      { label: "Fire Fighting", href: "#fire-fighting" },
-      { label: "Rescue", href: "#rescue" },
-      { label: "Our Boats", href: "#our-boats" },
-      { label: "Gallery", href: "#gallery" },
-      { label: "Contact", href: "#contact" },
+      { label: "Gallery", href: "/values" },
+      { label: "Process", href: "/process" },
+      { label: "Project", href: "/project" },
+      { label: "Contact", href: "/contact" },
     ],
     aboutNav: [
       { label: "Story", href: "#story" },
-      { label: "Values", href: "#values" },
-      { label: "Process", href: "#process" },
-      { label: "Workshop", href: "#workshop" },
-      { label: "Contact", href: "#contact" },
     ],
     home: {
       heroLine1: "Welcome to Tinn Silver",
@@ -197,25 +191,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Commercial fishing",
         "Commercial marine",
       ],
-      team: { label: "Our team", title: "One team. Every discipline." },
-      teamCards: [
-        {
-          title: "Engineering",
-          text: "From naval architecture and systems integration to production-ready detail.",
-        },
-        {
-          title: "Project guidance",
-          text: "A direct line from your operational brief to the people shaping the solution.",
-        },
-        {
-          title: "Production",
-          text: "Specialists in aluminium construction, precision welding and final assembly.",
-        },
-        {
-          title: "Service",
-          text: "Practical support that continues after your vessel has entered service.",
-        },
-      ],
       quality: { label: "Quality", title: "Confidence is built, not claimed." },
       qualityLead:
         "Materials, production methods, testing and documentation are selected around each vessel's intended operation. Applicable certification and classification requirements are confirmed and documented individually for every project.",
@@ -244,10 +219,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       aboutTitle: "Über uns | Tinn Silver",
       aboutDescription:
         "Mehr als 80 Jahre niederländisches Handwerk für individuelle Aluminium-Arbeits-, Rettungs- und Löschboote.",
+      valuesTitle: "Unsere Werte | Tinn Silver",
+      valuesDescription:
+        "Engineering, Handwerk aus eigener Fertigung, individuelle Lösungen und zuverlässige Leistung prägen jedes Schiff von Tinn Silver.",
     },
     common: {
-      more: "Mehr",
-      moreLinks: "Weitere Links",
       openMenu: "Menü öffnen",
       brandHome: "Tinn Silver Lösch- und Rettungsboote, Startseite",
       backHome: "Zurück zur Startseite",
@@ -259,18 +235,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
     nav: [
       { label: "Startseite", href: "/" },
       { label: "Über uns", href: "/about" },
-      { label: "Brandbekämpfung", href: "#fire-fighting" },
-      { label: "Rettung", href: "#rescue" },
-      { label: "Unsere Boote", href: "#our-boats" },
-      { label: "Galerie", href: "#gallery" },
-      { label: "Kontakt", href: "#contact" },
+      { label: "Galerie", href: "/values" },
+      { label: "Prozess", href: "/process" },
+      { label: "Projekt", href: "/project" },
+      { label: "Kontakt", href: "/contact" },
     ],
     aboutNav: [
       { label: "Geschichte", href: "#story" },
-      { label: "Werte", href: "#values" },
-      { label: "Prozess", href: "#process" },
-      { label: "Werkstatt", href: "#workshop" },
-      { label: "Kontakt", href: "#contact" },
     ],
     home: {
       heroLine1: "Willkommen bei Tinn Silver",
@@ -350,25 +321,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Gewerbliche Fischerei",
         "Gewerbliche Schifffahrt",
       ],
-      team: { label: "Unser Team", title: "Ein Team. Jede Disziplin." },
-      teamCards: [
-        {
-          title: "Engineering",
-          text: "Vom Schiffsentwurf und Systemintegration bis zur produktionsreifen Ausführung.",
-        },
-        {
-          title: "Projektleitung",
-          text: "Ein direkter Draht von Ihrem Einsatzprofil zu den Menschen, die die Lösung gestalten.",
-        },
-        {
-          title: "Produktion",
-          text: "Spezialisten für Aluminiumbau, Präzisionsschweißen und Endmontage.",
-        },
-        {
-          title: "Service",
-          text: "Praktische Unterstützung auch nach der Inbetriebnahme Ihres Schiffes.",
-        },
-      ],
       quality: { label: "Qualität", title: "Vertrauen entsteht durch Bau, nicht durch Behauptung." },
       qualityLead:
         "Materialien, Fertigungsmethoden, Tests und Dokumentation werden auf den geplanten Einsatz jedes Schiffes abgestimmt. Geltende Zertifizierungs- und Klassifikationsanforderungen werden für jedes Projekt individuell bestätigt und dokumentiert.",
@@ -397,10 +349,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       aboutTitle: "Over ons | Tinn Silver",
       aboutDescription:
         "Meer dan 80 jaar Nederlands vakmanschap in maatwerk aluminium werkboten, reddingsboten en blusvaartuigen.",
+      valuesTitle: "Onze waarden | Tinn Silver",
+      valuesDescription:
+        "Engineering, vakmanschap in eigen huis, oplossingen op maat en betrouwbare prestaties staan centraal in elk schip van Tinn Silver.",
     },
     common: {
-      more: "Meer",
-      moreLinks: "Meer links",
       openMenu: "Menu openen",
       brandHome: "Tinn Silver blus en reddingsboten, startpagina",
       backHome: "Terug naar startpagina",
@@ -412,18 +365,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
     nav: [
       { label: "Home", href: "/" },
       { label: "Over ons", href: "/about" },
-      { label: "Brandbestrijding", href: "#fire-fighting" },
-      { label: "Redding", href: "#rescue" },
-      { label: "Onze boten", href: "#our-boats" },
-      { label: "Galerij", href: "#gallery" },
-      { label: "Contact", href: "#contact" },
+      { label: "Galerij", href: "/values" },
+      { label: "Proces", href: "/process" },
+      { label: "Project", href: "/project" },
+      { label: "Contact", href: "/contact" },
     ],
     aboutNav: [
       { label: "Verhaal", href: "#story" },
-      { label: "Waarden", href: "#values" },
-      { label: "Proces", href: "#process" },
-      { label: "Werkplaats", href: "#workshop" },
-      { label: "Contact", href: "#contact" },
     ],
     home: {
       heroLine1: "Welkom bij Tinn Silver",
@@ -503,25 +451,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Commerciële visserij",
         "Commerciële scheepvaart",
       ],
-      team: { label: "Ons team", title: "Eén team. Elke discipline." },
-      teamCards: [
-        {
-          title: "Engineering",
-          text: "Van scheepsarchitectuur en systeemintegratie tot productieklaar detail.",
-        },
-        {
-          title: "Projectbegeleiding",
-          text: "Een directe lijn van uw operationele briefing naar de mensen die de oplossing vormgeven.",
-        },
-        {
-          title: "Productie",
-          text: "Specialisten in aluminiumbouw, precisielassen en eindmontage.",
-        },
-        {
-          title: "Service",
-          text: "Praktische ondersteuning die doorgaat nadat uw vaartuig in dienst is gesteld.",
-        },
-      ],
       quality: { label: "Kwaliteit", title: "Vertrouwen wordt gebouwd, niet beweerd." },
       qualityLead:
         "Materialen, productiemethoden, testen en documentatie worden afgestemd op de beoogde inzet van elk vaartuig. Toepasselijke certificering en classificatie-eisen worden voor elk project individueel bevestigd en gedocumenteerd.",
@@ -550,10 +479,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       aboutTitle: "من نحن | Tinn Silver",
       aboutDescription:
         "أكثر من 80 عامًا من الحرفية الهولندية في قوارب العمل والإنقاذ والإطفاء من الألمنيوم المصممة حسب الطلب.",
+      valuesTitle: "قيمنا | Tinn Silver",
+      valuesDescription:
+        "الهندسة والحرفية الداخلية والحلول المخصصة والأداء الموثوق هي جوهر كل قارب من Tinn Silver.",
     },
     common: {
-      more: "المزيد",
-      moreLinks: "روابط إضافية",
       openMenu: "فتح القائمة",
       brandHome: "Tinn Silver قوارب الإطفاء والإنقاذ، الصفحة الرئيسية",
       backHome: "العودة إلى الصفحة الرئيسية",
@@ -565,18 +495,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
     nav: [
       { label: "الرئيسية", href: "/" },
       { label: "من نحن", href: "/about" },
-      { label: "مكافحة الحرائق", href: "#fire-fighting" },
-      { label: "الإنقاذ", href: "#rescue" },
-      { label: "قواربنا", href: "#our-boats" },
-      { label: "المعرض", href: "#gallery" },
-      { label: "اتصل بنا", href: "#contact" },
+      { label: "المعرض", href: "/values" },
+      { label: "العملية", href: "/process" },
+      { label: "المشروع", href: "/project" },
+      { label: "اتصل بنا", href: "/contact" },
     ],
     aboutNav: [
       { label: "القصة", href: "#story" },
-      { label: "القيم", href: "#values" },
-      { label: "العملية", href: "#process" },
-      { label: "الورشة", href: "#workshop" },
-      { label: "اتصل بنا", href: "#contact" },
     ],
     home: {
       heroLine1: "مرحبًا بكم في Tinn Silver",
@@ -655,25 +580,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "الحكومة",
         "الصيد التجاري",
         "القطاع البحري التجاري",
-      ],
-      team: { label: "فريقنا", title: "فريق واحد. كل تخصص." },
-      teamCards: [
-        {
-          title: "الهندسة",
-          text: "من الهندسة البحرية وتكامل الأنظمة إلى التفاصيل الجاهزة للإنتاج.",
-        },
-        {
-          title: "إدارة المشاريع",
-          text: "خط مباشر من متطلباتكم التشغيلية إلى من يشكلون الحل.",
-        },
-        {
-          title: "الإنتاج",
-          text: "متخصصون في بناء الألمنيوم واللحام الدقيق والتجميع النهائي.",
-        },
-        {
-          title: "الخدمة",
-          text: "دعم عملي يستمر بعد دخول قاربكم الخدمة.",
-        },
       ],
       quality: { label: "الجودة", title: "الثقة تُبنى، لا تُدعى." },
       qualityLead:
