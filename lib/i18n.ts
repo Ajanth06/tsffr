@@ -51,6 +51,7 @@ export type Dictionary = {
     heroTitle: string;
     heroLead: string;
     heroImageAlt: string;
+    storyImageAlt: string;
     story: { label: string; title: string };
     storyLead: string;
     storyParagraphs: [string, string];
@@ -98,12 +99,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       brandHome: "Tinn Silver Fire Fighting and Rescue home",
       backHome: "Back home",
       readMore: "Read more",
-      explore: "Explore",
+      explore: "Explore our story",
       scrollToStory: "Scroll to our story",
       netherlandsFlag: "Netherlands flag",
     },
     nav: [
-      { label: "About Us", href: "#about-us" },
+      { label: "Home", href: "/" },
+      { label: "About Us", href: "/about" },
       { label: "Fire Fighting", href: "#fire-fighting" },
       { label: "Rescue", href: "#rescue" },
       { label: "Our Boats", href: "#our-boats" },
@@ -130,7 +132,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Our in-house design and engineering team works closely with each customer to translate operational requirements into a fully custom-built solution. From the first concept to precision welding and final finishing, every step is handled by experienced specialists under one roof.",
         "Fire brigades, marine police, rescue organizations and commercial operators trust our boats for their performance, clear communication and uncompromising build quality. We believe every vessel should be as unique as the mission it is built to serve.",
       ],
-      aboutImageAlt: "Tinn Silver director beside an aluminium rescue boat in the workshop",
+      aboutImageAlt: "Aluminium rescue boat under construction in the Tinn Silver workshop",
       statsLabel: "Company facts",
       stats: ["Years experience", "Engineering", "Custom built"],
       companyFacts: "Company facts",
@@ -141,6 +143,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heroLead:
         "For more than 80 years, we have designed and built custom aluminium boats trusted by emergency services, government agencies and commercial operators across Europe.",
       heroImageAlt: "Aluminium rescue vessel under construction in a modern shipyard",
+      storyImageAlt: "Director of Tinn Silver in the aluminium boat workshop",
       story: { label: "Our story", title: "More than 80 years of Dutch craftsmanship" },
       storyLead:
         "What began as Dutch boatbuilding expertise has grown into a specialist operation for professional aluminium vessels.",
@@ -249,12 +252,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       brandHome: "Tinn Silver Lösch- und Rettungsboote, Startseite",
       backHome: "Zurück zur Startseite",
       readMore: "Mehr erfahren",
-      explore: "Entdecken",
+      explore: "Unsere Geschichte entdecken",
       scrollToStory: "Zur Geschichte scrollen",
       netherlandsFlag: "Flagge der Niederlande",
     },
     nav: [
-      { label: "Über uns", href: "#about-us" },
+      { label: "Startseite", href: "/" },
+      { label: "Über uns", href: "/about" },
       { label: "Brandbekämpfung", href: "#fire-fighting" },
       { label: "Rettung", href: "#rescue" },
       { label: "Unsere Boote", href: "#our-boats" },
@@ -281,7 +285,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Unser hauseigenes Konstruktions- und Entwicklungsteam arbeitet eng mit jedem Kunden zusammen, um operative Anforderungen in eine vollständig maßgeschneiderte Lösung zu übersetzen. Vom ersten Konzept über präzises Schweißen bis zur Endmontage, jeder Schritt wird unter einem Dach von erfahrenen Spezialisten durchgeführt.",
         "Feuerwehren, Wasserschutzpolizei, Rettungsorganisationen und gewerbliche Betreiber vertrauen auf unsere Boote wegen ihrer Leistung, klaren Kommunikation und kompromisslosen Bauqualität. Jedes Schiff soll so einzigartig sein wie der Einsatz, für den es gebaut wird.",
       ],
-      aboutImageAlt: "Geschäftsführer von Tinn Silver neben einem Aluminium-Rettungsboot in der Werkstatt",
+      aboutImageAlt: "Aluminium-Rettungsboot im Bau in der Tinn Silver Werkstatt",
       statsLabel: "Unternehmensfakten",
       stats: ["Jahre Erfahrung", "Ingenieurskunst", "Maßgeschneidert"],
       companyFacts: "Unternehmensfakten",
@@ -292,6 +296,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heroLead:
         "Seit mehr als 80 Jahren konstruieren und bauen wir individuelle Aluminiumboote für Einsatzkräfte, Behörden und gewerbliche Betreiber in ganz Europa.",
       heroImageAlt: "Aluminium-Rettungsboot im Bau in einer modernen Werft",
+      storyImageAlt: "Geschäftsführer von Tinn Silver in der Aluminium-Bootswerkstatt",
       story: { label: "Unsere Geschichte", title: "Mehr als 80 Jahre niederländisches Handwerk" },
       storyLead:
         "Was als niederländische Bootsbau-Expertise begann, ist heute ein Spezialbetrieb für professionelle Aluminiumfahrzeuge.",
@@ -400,12 +405,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       brandHome: "Tinn Silver blus en reddingsboten, startpagina",
       backHome: "Terug naar startpagina",
       readMore: "Lees meer",
-      explore: "Ontdekken",
+      explore: "Ontdek ons verhaal",
       scrollToStory: "Scroll naar ons verhaal",
       netherlandsFlag: "Nederlandse vlag",
     },
     nav: [
-      { label: "Over ons", href: "#about-us" },
+      { label: "Home", href: "/" },
+      { label: "Over ons", href: "/about" },
       { label: "Brandbestrijding", href: "#fire-fighting" },
       { label: "Redding", href: "#rescue" },
       { label: "Onze boten", href: "#our-boats" },
@@ -432,7 +438,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Ons interne ontwerp en engineeringteam werkt nauw samen met elke klant om operationele eisen om te zetten in een volledig maatwerkoplossing. Van het eerste concept tot precisielassen en afwerking, elke stap wordt onder één dak uitgevoerd door ervaren specialisten.",
         "Brandweerkorpsen, waterpolitie, reddingsorganisaties en commerciële operators vertrouwen op onze boten vanwege hun prestaties, heldere communicatie en compromisloze bouwkwaliteit. Elk vaartuig moet zo uniek zijn als de missie waarvoor het is gebouwd.",
       ],
-      aboutImageAlt: "Directeur van Tinn Silver naast een aluminium reddingsboot in de werkplaats",
+      aboutImageAlt: "Aluminium reddingsboot in aanbouw in de Tinn Silver werkplaats",
       statsLabel: "Bedrijfsfeiten",
       stats: ["Jaar ervaring", "Engineering", "Maatwerk"],
       companyFacts: "Bedrijfsfeiten",
@@ -443,6 +449,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heroLead:
         "Al meer dan 80 jaar ontwerpen en bouwen wij maatwerk aluminium boten voor hulpdiensten, overheidsinstanties en commerciële operators in heel Europa.",
       heroImageAlt: "Aluminium reddingsvaartuig in aanbouw in een moderne scheepswerf",
+      storyImageAlt: "Directeur van Tinn Silver in de aluminium bootwerkplaats",
       story: { label: "Ons verhaal", title: "Meer dan 80 jaar Nederlands vakmanschap" },
       storyLead:
         "Wat begon als Nederlandse bootbouwexpertise is uitgegroeid tot een specialist in professionele aluminium vaartuigen.",
@@ -551,12 +558,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
       brandHome: "Tinn Silver قوارب الإطفاء والإنقاذ، الصفحة الرئيسية",
       backHome: "العودة إلى الصفحة الرئيسية",
       readMore: "اقرأ المزيد",
-      explore: "استكشف",
+      explore: "استكشف قصتنا",
       scrollToStory: "انتقل إلى قصتنا",
       netherlandsFlag: "علم هولندا",
     },
     nav: [
-      { label: "من نحن", href: "#about-us" },
+      { label: "الرئيسية", href: "/" },
+      { label: "من نحن", href: "/about" },
       { label: "مكافحة الحرائق", href: "#fire-fighting" },
       { label: "الإنقاذ", href: "#rescue" },
       { label: "قواربنا", href: "#our-boats" },
@@ -583,7 +591,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "يعمل فريق التصميم والهندسة لدينا عن كثب مع كل عميل لتحويل المتطلبات التشغيلية إلى حل مصمم بالكامل حسب الطلب. من المفهوم الأول إلى اللحام الدقيق والتشطيب النهائي، تُنفَّذ كل خطوة تحت سقف واحد بواسطة متخصصين ذوي خبرة.",
         "تثق فرق الإطفاء والشرطة البحرية ومنظمات الإنقاذ والمشغلون التجاريون بقواربنا لأدائها وتواصلها الواضح وجودة بنائها التي لا تُساوم. نؤمن أن كل قارب يجب أن يكون فريدًا مثل المهمة التي بُني من أجلها.",
       ],
-      aboutImageAlt: "مدير Tinn Silver بجانب قارب إنقاذ من الألمنيوم في الورشة",
+      aboutImageAlt: "قارب إنقاذ من الألمنيوم قيد الإنشاء في ورشة Tinn Silver",
       statsLabel: "حقائق عن الشركة",
       stats: ["سنوات الخبرة", "الهندسة", "مصمم حسب الطلب"],
       companyFacts: "حقائق عن الشركة",
@@ -594,6 +602,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heroLead:
         "لأكثر من 80 عامًا، صممنا وبنينا قوارب ألمنيوم مخصصة تثق بها خدمات الطوارئ والجهات الحكومية والمشغلون التجاريون في أنحاء أوروبا.",
       heroImageAlt: "قارب إنقاذ من الألمنيوم قيد الإنشاء في حوض سفن حديث",
+      storyImageAlt: "مدير Tinn Silver في ورشة قوارب الألمنيوم",
       story: { label: "قصتنا", title: "أكثر من 80 عامًا من الحرفية الهولندية" },
       storyLead:
         "ما بدأ كخبرة هولندية في بناء السفن أصبح اليوم عملًا متخصصًا في قوارب الألمنيوم المهنية.",

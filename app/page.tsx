@@ -1,12 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LanguageSwitcher } from "./components/language-switcher";
-import { ScrollToReadMore } from "./components/home-scroll";
 import { getDictionary, getLocale } from "../lib/i18n";
 
 function Brand({ label }: { label: string }) {
   return (
-    <a className="brand" href="#top" aria-label={label}>
+    <Link className="brand" href="/" aria-label={label}>
       <Image
         className="brand-logo"
         src="/tsffr-logo.jpg"
@@ -15,8 +14,20 @@ function Brand({ label }: { label: string }) {
         height={100}
         preload
       />
-    </a>
+    </Link>
   );
+}
+
+function NavItem({ href, label }: { href: string; label: string }) {
+  if (href.startsWith("/")) {
+    return (
+      <Link href={href}>
+        {label}
+      </Link>
+    );
+  }
+
+  return <a href={href}>{label}</a>;
 }
 
 export default async function Home() {
@@ -26,15 +37,12 @@ export default async function Home() {
 
   return (
     <main id="top">
-      <ScrollToReadMore />
       <header className="site-header">
         <Brand label={common.brandHome} />
 
         <nav className="desktop-nav" aria-label="Main navigation">
           {nav.map((item) => (
-            <a href={item.href} key={item.href}>
-              {item.label}
-            </a>
+            <NavItem href={item.href} label={item.label} key={item.href} />
           ))}
           <button className="more-button" type="button" aria-label={common.moreLinks}>
             {common.more}
@@ -57,7 +65,7 @@ export default async function Home() {
         <div className="hero-image-wrap" aria-hidden="true">
           <Image
             className="hero-image"
-            src="/tinn-silver-hero.png"
+            src="/home-hero-rescue-boat-4k.jpg"
             alt={t.heroImageAlt}
             fill
             sizes="100vw"
@@ -65,6 +73,7 @@ export default async function Home() {
           />
         </div>
         <div className="hero-wash" />
+        <div className="hero-header-blend" aria-hidden="true" />
         <div className="hero-content">
           <h1 id="hero-heading">
             <span className="hero-heading-line">{t.heroLine1}</span>
@@ -82,36 +91,7 @@ export default async function Home() {
         <div className="hero-transition" aria-hidden="true" />
       </section>
 
-      <section className="about-section" id="about-us" aria-labelledby="about-heading">
-        <div className="about-grid">
-          <div className="about-image-wrap">
-            <Image
-              className="about-image"
-              src="/about-workshop.png"
-              alt={t.aboutImageAlt}
-              fill
-              sizes="(max-width: 800px) 100vw, 47vw"
-            />
-          </div>
-
-          <div className="about-content">
-            <h2 id="about-heading">{t.aboutHeading}</h2>
-
-            <div className="about-copy">
-              {t.aboutParagraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 32)}>{paragraph}</p>
-              ))}
-            </div>
-
-            <Link className="about-link" id="read-more" href="/about">
-              {common.readMore}
-              <svg viewBox="0 0 42 14" aria-hidden="true">
-                <path d="M1 7h38M34 2l5 5-5 5" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-
+      <section className="about-section" id="about-us">
         <div className="about-stats" aria-label={t.companyFacts}>
           <div className="stat">
             <strong>80+</strong>
@@ -119,7 +99,21 @@ export default async function Home() {
           </div>
           <div className="stat stat-flag">
             <strong>
-              <span className="dutch-flag-large" role="img" aria-label={common.netherlandsFlag} />
+              <span className="stat-flag-badge" role="img" aria-label={common.netherlandsFlag}>
+                <span className="stat-flag-stripe stat-flag-stripe--red" aria-hidden="true" />
+                <span className="stat-flag-stripe stat-flag-stripe--white" aria-hidden="true">
+                  <span className="stat-flag-logo-wrap">
+                    <Image
+                      className="stat-flag-logo"
+                      src="/tsffr-logo.jpg"
+                      alt=""
+                      fill
+                      sizes="144px"
+                    />
+                  </span>
+                </span>
+                <span className="stat-flag-stripe stat-flag-stripe--blue" aria-hidden="true" />
+              </span>
             </strong>
             <span>{t.stats[1]}</span>
           </div>

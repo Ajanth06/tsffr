@@ -62,13 +62,19 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function AboutPage() {
   const locale = await getLocale();
   const dict = getDictionary(locale);
-  const { about: t, common, aboutNav } = dict;
+  const { about: t, common, aboutNav, nav } = dict;
+  const mainNav = nav.slice(0, 2);
 
   return (
     <main className="about-page">
       <header className="about-page-header">
         <BackHomeLink label={common.backHome} />
         <nav aria-label="About page navigation">
+          {mainNav.map((item) => (
+            <Link href={item.href} key={item.href}>
+              {item.label}
+            </Link>
+          ))}
           {aboutNav.map((item) => (
             <a href={item.href} key={item.href}>
               {item.label}
@@ -107,23 +113,26 @@ export default async function AboutPage() {
         </a>
       </section>
 
-      <section className="about-story about-shell" id="story">
-        <SectionIntro index="01" label={t.story.label} title={t.story.title} />
-        <div className="about-story-grid">
-          <div className="about-story-image">
+      <section className="about-section about-story-mission" id="story">
+        <div className="about-grid about-story-mission-grid">
+          <div className="about-story-portrait">
             <Image
-              src="/about-workshop.png"
-              alt={dict.home.aboutImageAlt}
+              className="about-story-portrait-image"
+              src="/about-director-headshot.png"
+              alt={t.storyImageAlt}
               fill
-              sizes="(max-width: 820px) 100vw, 47vw"
+              sizes="(max-width: 800px) 100vw, 620px"
             />
           </div>
-          <div className="about-story-copy">
-            <p className="story-lead">{t.storyLead}</p>
-            {t.storyParagraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 32)}>{paragraph}</p>
-            ))}
-            <blockquote>{t.quote}</blockquote>
+
+          <div className="about-content">
+            <h2>{dict.home.aboutHeading}</h2>
+
+            <div className="about-copy">
+              {dict.home.aboutParagraphs.map((paragraph) => (
+                <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
       </section>
