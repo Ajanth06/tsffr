@@ -56,6 +56,7 @@ export default async function ProcessPage() {
           preload
         />
         <div className="about-shell">
+          <p className="process-hero-eyebrow">{t.process.label}</p>
           <h1 id="process-title">{splitLines(t.process.title)}</h1>
           <p className="standalone-hero-lead">{t.process.lead}</p>
         </div>
@@ -76,29 +77,32 @@ export default async function ProcessPage() {
         </div>
       </section>
 
-      <section className="about-process about-shell standalone-content" aria-label={t.process.label}>
-        <div className="about-section-intro">
-          <p><span>02</span>{t.process.label}</p>
-          <h2>{t.process.title}</h2>
+      <section className="about-process process-journey standalone-content" aria-label={t.process.label}>
+        <div className="about-shell">
+          <div className="about-section-intro">
+            <p><span>02</span>{t.process.label}</p>
+            <h2>{t.process.title}</h2>
+          </div>
+          <ol className="process-story">
+            {t.processSteps.map((step, index) => (
+              <li data-step={String(index + 1).padStart(2, "0")} key={step.title}>
+                <figure>
+                  <Image
+                    src={processImages[index]}
+                    alt={step.alt}
+                    fill
+                    sizes="(max-width: 800px) 100vw, 58vw"
+                  />
+                </figure>
+                <div className="process-step-copy">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
         </div>
-        <ol className="process-story">
-          {t.processSteps.map((step, index) => (
-            <li key={step.title}>
-              <figure>
-                <Image
-                  src={processImages[index]}
-                  alt={step.alt}
-                  fill
-                  sizes="(max-width: 820px) 100vw, 20vw"
-                />
-              </figure>
-              <div>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h2>{step.title}</h2>
-              </div>
-            </li>
-          ))}
-        </ol>
       </section>
 
       <section className="about-workshop" aria-labelledby="workshop-title">
@@ -124,21 +128,30 @@ export default async function ProcessPage() {
         </div>
       </section>
 
-      <section className="about-quality about-shell" aria-labelledby="quality-title">
-        <div className="about-section-intro">
-          <p><span>04</span>{t.quality.label}</p>
-          <h2 id="quality-title">{t.quality.title}</h2>
-        </div>
-        <div className="quality-grid">
-          <p>{t.qualityLead}</p>
-          <div className="quality-capabilities" aria-label={t.qualityCapabilitiesLabel}>
-            {t.qualityItems.map((item, index) => (
-              <div key={item.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <strong>{item.title}</strong>
-                <p>{item.text}</p>
+      <section className="about-quality process-quality" aria-labelledby="quality-title">
+        <div className="about-shell">
+          <div className="about-section-intro">
+            <p><span>04</span>{t.quality.label}</p>
+            <h2 id="quality-title">{t.quality.title}</h2>
+          </div>
+          <div className="quality-grid">
+            <div className="process-quality-lead">
+              <p>{t.qualityLead}</p>
+              <div className="process-quality-mark" aria-hidden="true">
+                <i />
+                <i />
+                <span>Q</span>
               </div>
-            ))}
+            </div>
+            <div className="quality-capabilities" aria-label={t.qualityCapabilitiesLabel}>
+              {t.qualityItems.map((item, index) => (
+                <div key={item.title}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{item.title}</strong>
+                  <p>{item.text}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

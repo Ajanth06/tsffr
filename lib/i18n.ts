@@ -55,6 +55,7 @@ export type Dictionary = {
     heroLead: string;
     heroImageAlt: string;
     storyImageAlt: string;
+    storyCaption: string;
     heritageGalleryLabel: string;
     heritageImages: [
       { alt: string; caption: string },
@@ -68,7 +69,7 @@ export type Dictionary = {
     values: { label: string; title: string };
     valueCards: Array<{ title: string; text: string }>;
     process: { label: string; title: string; lead: string };
-    processSteps: Array<{ title: string; alt: string }>;
+    processSteps: Array<{ title: string; alt: string; text: string }>;
     workshop: { label: string; title: string };
     workshopCaptions: [string, string, string];
     numbersLabel: string;
@@ -158,6 +159,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "For more than 80 years, we have designed and built custom aluminium boats trusted by emergency services, government agencies and commercial operators across Europe.",
       heroImageAlt: "Aluminium rescue vessel under construction in a modern shipyard",
       storyImageAlt: "Director of Tinn Silver in the aluminium boat workshop",
+      storyCaption: "Chief Executive Officer,",
       heritageGalleryLabel: "Tinn Silver heritage",
       heritageImages: [
         {
@@ -173,7 +175,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           caption: "Built by the family shipyard, established in 1941",
         },
       ],
-      story: { label: "Our story", title: "More than 80 years of Dutch craftsmanship" },
+      story: { label: "Our Heritage", title: "More than 80 years of Dutch craftsmanship" },
       storyLead:
         "What began as Dutch boatbuilding expertise has grown into a specialist operation for professional aluminium vessels.",
       storyParagraphs: [
@@ -206,20 +208,20 @@ export const dictionaries: Record<Locale, Dictionary> = {
         lead: "Every stage, from planning and engineering to construction and delivery, under one roof.",
       },
       processSteps: [
-        { title: "Concept", alt: "Rescue boat concept drawings on an engineering table" },
-        { title: "Engineering", alt: "Marine engineer working with CAD and CNC equipment" },
-        { title: "Construction", alt: "Precision welding during aluminium hull construction" },
-        { title: "Testing", alt: "Completed fire rescue boats being tested on the water" },
-        { title: "Delivery", alt: "Customer receiving a completed aluminium workboat" },
+        { title: "Concept", alt: "Rescue boat concept drawings on an engineering table", text: "Your mission, crew and operating environment are translated into a clear vessel concept and technical brief." },
+        { title: "Engineering", alt: "Marine engineer working with CAD and CNC equipment", text: "Hull, systems and equipment are engineered as one integrated solution before production begins." },
+        { title: "Construction", alt: "Precision welding during aluminium hull construction", text: "Certified materials and precision aluminium workmanship bring every engineered detail to life in our workshop." },
+        { title: "Testing", alt: "Completed fire rescue boats being tested on the water", text: "Systems, handling and performance are verified against the demands of the vessel's intended operation." },
+        { title: "Delivery", alt: "Customer receiving a completed aluminium workboat", text: "The finished vessel is handed over mission ready, with direct support from the people who built it." },
       ],
       workshop: { label: "Our workshop", title: "Craftsmanship lives here." },
       workshopCaptions: ["Precision welding", "Engineering & CNC", "Final assembly"],
       numbersLabel: "Company facts",
       numbers: [
-        { value: "1941", label: "Our boatbuilding heritage began" },
-        { value: "IN HOUSE", label: "Design, engineering, build and testing" },
-        { value: "BESPOKE", label: "Every vessel" },
-        { value: "DUTCH BUILT", label: "Made in the Netherlands" },
+        { value: "1941", label: "Dutch boatbuilding heritage" },
+        { value: "30+", label: "Years of aluminium boatbuilding" },
+        { value: "ONE ROOF", label: "Design, engineering, build and testing" },
+        { value: "TAILORED", label: "Every vessel built for its mission" },
       ],
       industries: { label: "Industries we serve", title: "Built for work that matters." },
       industryNames: [
@@ -318,6 +320,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Seit mehr als 80 Jahren konstruieren und bauen wir individuelle Aluminiumboote für Einsatzkräfte, Behörden und gewerbliche Betreiber in ganz Europa.",
       heroImageAlt: "Aluminium-Rettungsboot im Bau in einer modernen Werft",
       storyImageAlt: "Geschäftsführer von Tinn Silver in der Aluminium-Bootswerkstatt",
+      storyCaption: "Geschäftsführer,",
       heritageGalleryLabel: "Das Erbe von Tinn Silver",
       heritageImages: [
         {
@@ -333,7 +336,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           caption: "Gebaut von der 1941 gegründeten Familienwerft",
         },
       ],
-      story: { label: "Unsere Geschichte", title: "Mehr als 80 Jahre niederländisches Handwerk" },
+      story: { label: "Unser Erbe", title: "Mehr als 80 Jahre niederländisches Handwerk" },
       storyLead:
         "Was als niederländische Bootsbau-Expertise begann, ist heute ein Spezialbetrieb für professionelle Aluminiumfahrzeuge.",
       storyParagraphs: [
@@ -366,20 +369,20 @@ export const dictionaries: Record<Locale, Dictionary> = {
         lead: "Jede Phase, von Planung und Engineering bis Bau und Auslieferung, unter einem Dach.",
       },
       processSteps: [
-        { title: "Konzept", alt: "Konzeptzeichnungen eines Rettungsboots auf einem Konstruktionstisch" },
-        { title: "Engineering", alt: "Schiffbauingenieur bei CAD- und CNC-Arbeiten" },
-        { title: "Konstruktion", alt: "Präzisionsschweißen beim Aluminium-Rumpfbau" },
-        { title: "Erprobung", alt: "Fertige Lösch- und Rettungsboote bei Tests auf dem Wasser" },
-        { title: "Auslieferung", alt: "Kunde bei Übergabe eines fertigen Aluminium-Arbeitsboots" },
+        { title: "Konzept", alt: "Konzeptzeichnungen eines Rettungsboots auf einem Konstruktionstisch", text: "Ihr Einsatz, Ihre Besatzung und das Einsatzgebiet werden in ein klares Schiffskonzept und technisches Lastenheft übersetzt." },
+        { title: "Engineering", alt: "Schiffbauingenieur bei CAD- und CNC-Arbeiten", text: "Rumpf, Systeme und Ausrüstung werden vor Produktionsbeginn als eine integrierte Lösung konstruiert." },
+        { title: "Konstruktion", alt: "Präzisionsschweißen beim Aluminium-Rumpfbau", text: "Zertifizierte Materialien und präzise Aluminiumverarbeitung setzen jedes technische Detail in unserer Werkstatt um." },
+        { title: "Erprobung", alt: "Fertige Lösch- und Rettungsboote bei Tests auf dem Wasser", text: "Systeme, Fahrverhalten und Leistung werden anhand der Anforderungen des vorgesehenen Einsatzes geprüft." },
+        { title: "Auslieferung", alt: "Kunde bei Übergabe eines fertigen Aluminium-Arbeitsboots", text: "Das fertige Schiff wird einsatzbereit übergeben, mit direkter Unterstützung durch die Menschen, die es gebaut haben." },
       ],
       workshop: { label: "Unsere Werkstatt", title: "Handwerk hat hier sein Zuhause." },
       workshopCaptions: ["Präzisionsschweißen", "Engineering & CNC", "Endmontage"],
       numbersLabel: "Unternehmensfakten",
       numbers: [
-        { value: "1941", label: "Beginn unseres Bootsbauerbes" },
-        { value: "IN HOUSE", label: "Design, Engineering, Bau und Erprobung" },
-        { value: "INDIVIDUELL", label: "Jedes Schiff" },
-        { value: "DUTCH BUILT", label: "Gebaut in den Niederlanden" },
+        { value: "1941", label: "Niederländisches Bootsbauerbe" },
+        { value: "30+", label: "Jahre Aluminiumbootbau" },
+        { value: "EIN DACH", label: "Design, Engineering, Bau und Erprobung" },
+        { value: "EIN UNIKAT", label: "Jedes Schiff für seinen Einsatz gebaut" },
       ],
       industries: { label: "Branchen", title: "Gebaut für Arbeit, die zählt." },
       industryNames: [
@@ -478,6 +481,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Al meer dan 80 jaar ontwerpen en bouwen wij maatwerk aluminium boten voor hulpdiensten, overheidsinstanties en commerciële operators in heel Europa.",
       heroImageAlt: "Aluminium reddingsvaartuig in aanbouw in een moderne scheepswerf",
       storyImageAlt: "Directeur van Tinn Silver in de aluminium bootwerkplaats",
+      storyCaption: "Algemeen directeur,",
       heritageGalleryLabel: "Het erfgoed van Tinn Silver",
       heritageImages: [
         {
@@ -493,7 +497,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           caption: "Gebouwd door de familiewerf, opgericht in 1941",
         },
       ],
-      story: { label: "Ons verhaal", title: "Meer dan 80 jaar Nederlands vakmanschap" },
+      story: { label: "Ons erfgoed", title: "Meer dan 80 jaar Nederlands vakmanschap" },
       storyLead:
         "Wat begon als Nederlandse bootbouwexpertise is uitgegroeid tot een specialist in professionele aluminium vaartuigen.",
       storyParagraphs: [
@@ -526,20 +530,20 @@ export const dictionaries: Record<Locale, Dictionary> = {
         lead: "Elke fase, van planning en engineering tot bouw en oplevering, onder één dak.",
       },
       processSteps: [
-        { title: "Concept", alt: "Concepttekeningen van een reddingsboot op een tekentafel" },
-        { title: "Engineering", alt: "Scheepsbouwkundige aan het werk met CAD en CNC apparatuur" },
-        { title: "Constructie", alt: "Precisielassen tijdens de aluminium rompbouw" },
-        { title: "Testen", alt: "Voltooide blus en reddingsboten worden op het water getest" },
-        { title: "Oplevering", alt: "Klant ontvangt een voltooide aluminium werkboot" },
+        { title: "Concept", alt: "Concepttekeningen van een reddingsboot op een tekentafel", text: "Uw missie, bemanning en vaargebied worden vertaald naar een helder scheepsconcept en technisch programma." },
+        { title: "Engineering", alt: "Scheepsbouwkundige aan het werk met CAD en CNC apparatuur", text: "Romp, systemen en uitrusting worden voor de productiestart als één geïntegreerde oplossing ontworpen." },
+        { title: "Constructie", alt: "Precisielassen tijdens de aluminium rompbouw", text: "Gecertificeerde materialen en nauwkeurig aluminium vakmanschap brengen elk technisch detail tot leven." },
+        { title: "Testen", alt: "Voltooide blus en reddingsboten worden op het water getest", text: "Systemen, vaargedrag en prestaties worden getoetst aan de eisen van de beoogde inzet." },
+        { title: "Oplevering", alt: "Klant ontvangt een voltooide aluminium werkboot", text: "Het voltooide vaartuig wordt inzetklaar overgedragen, met directe ondersteuning van de bouwers." },
       ],
       workshop: { label: "Onze werkplaats", title: "Vakmanschap leeft hier." },
       workshopCaptions: ["Precisielassen", "Engineering en CNC", "Eindmontage"],
       numbersLabel: "Bedrijfsfeiten",
       numbers: [
-        { value: "1941", label: "Het begin van ons scheepsbouwerfgoed" },
-        { value: "IN HOUSE", label: "Ontwerp, engineering, bouw en testen" },
-        { value: "MAATWERK", label: "Elk vaartuig" },
-        { value: "DUTCH BUILT", label: "Gebouwd in Nederland" },
+        { value: "1941", label: "Nederlands scheepsbouwerfgoed" },
+        { value: "30+", label: "Jaar aluminium scheepsbouw" },
+        { value: "EEN DAK", label: "Ontwerp, engineering, bouw en testen" },
+        { value: "UNIEK", label: "Elk vaartuig gebouwd voor zijn missie" },
       ],
       industries: { label: "Sectoren", title: "Gebouwd voor werk dat ertoe doet." },
       industryNames: [
@@ -638,6 +642,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "لأكثر من 80 عامًا، صممنا وبنينا قوارب ألمنيوم مخصصة تثق بها خدمات الطوارئ والجهات الحكومية والمشغلون التجاريون في أنحاء أوروبا.",
       heroImageAlt: "قارب إنقاذ من الألمنيوم قيد الإنشاء في حوض سفن حديث",
       storyImageAlt: "مدير Tinn Silver في ورشة قوارب الألمنيوم",
+      storyCaption: "الرئيس التنفيذي،",
       heritageGalleryLabel: "تراث Tinn Silver",
       heritageImages: [
         {
@@ -653,7 +658,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           caption: "بناه حوض بناء السفن العائلي الذي تأسس عام 1941",
         },
       ],
-      story: { label: "قصتنا", title: "أكثر من 80 عامًا من الحرفية الهولندية" },
+      story: { label: "تراثنا", title: "أكثر من 80 عامًا من الحرفية الهولندية" },
       storyLead:
         "ما بدأ كخبرة هولندية في بناء السفن أصبح اليوم عملًا متخصصًا في قوارب الألمنيوم المهنية.",
       storyParagraphs: [
@@ -686,20 +691,20 @@ export const dictionaries: Record<Locale, Dictionary> = {
         lead: "كل مرحلة، من التخطيط والهندسة إلى البناء والتسليم، تحت سقف واحد.",
       },
       processSteps: [
-        { title: "المفهوم", alt: "رسومات مفهومية لقارب إنقاذ على طاولة هندسية" },
-        { title: "الهندسة", alt: "مهندس بحري يعمل باستخدام CAD ومعدات CNC" },
-        { title: "البناء", alt: "لحام دقيق أثناء بناء هيكل الألمنيوم" },
-        { title: "الاختبار", alt: "قوارب إطفاء وإنقاذ مكتملة تُختبر على الماء" },
-        { title: "التسليم", alt: "عميل يستلم قارب عمل من الألمنيوم مكتملًا" },
+        { title: "المفهوم", alt: "رسومات مفهومية لقارب إنقاذ على طاولة هندسية", text: "نحوّل مهمتكم وطاقمكم وبيئة التشغيل إلى مفهوم واضح للسفينة وموجز تقني دقيق." },
+        { title: "الهندسة", alt: "مهندس بحري يعمل باستخدام CAD ومعدات CNC", text: "يتم تصميم الهيكل والأنظمة والمعدات كحل متكامل واحد قبل بدء الإنتاج." },
+        { title: "البناء", alt: "لحام دقيق أثناء بناء هيكل الألمنيوم", text: "تحول المواد المعتمدة والحرفية الدقيقة في الألمنيوم كل تفصيل هندسي إلى واقع داخل ورشتنا." },
+        { title: "الاختبار", alt: "قوارب إطفاء وإنقاذ مكتملة تُختبر على الماء", text: "يتم التحقق من الأنظمة والتحكم والأداء وفق متطلبات التشغيل المقصود للسفينة." },
+        { title: "التسليم", alt: "عميل يستلم قارب عمل من الألمنيوم مكتملًا", text: "تُسلّم السفينة جاهزة للمهمة مع دعم مباشر من الفريق الذي قام ببنائها." },
       ],
       workshop: { label: "ورشتنا", title: "الحرفة تعيش هنا." },
       workshopCaptions: ["لحام دقيق", "الهندسة وCNC", "التجميع النهائي"],
       numbersLabel: "حقائق عن الشركة",
       numbers: [
-        { value: "1941", label: "بداية إرثنا في بناء السفن" },
-        { value: "IN HOUSE", label: "التصميم والهندسة والبناء والاختبار" },
-        { value: "حسب الطلب", label: "كل سفينة" },
-        { value: "DUTCH BUILT", label: "بنيت في هولندا" },
+        { value: "1941", label: "إرث هولندي في بناء السفن" },
+        { value: "30+", label: "عامًا في بناء قوارب الألمنيوم" },
+        { value: "سقف واحد", label: "التصميم والهندسة والبناء والاختبار" },
+        { value: "فريد", label: "كل سفينة مبنية لمهمتها" },
       ],
       industries: { label: "القطاعات", title: "مبني لعمل يهم." },
       industryNames: [

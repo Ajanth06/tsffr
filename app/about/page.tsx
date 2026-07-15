@@ -84,8 +84,11 @@ export default async function AboutPage() {
               />
             </div>
             <div className="about-story-caption">
-              <span aria-hidden="true">1941</span>
-              <p>{t.storyImageAlt}</p>
+              <p>
+                {t.storyCaption}
+                <br />
+                <b>Tinn Silver Group</b>
+              </p>
             </div>
           </aside>
 
@@ -168,19 +171,13 @@ export default async function AboutPage() {
       </section>
 
       <section className="about-numbers" aria-label={t.numbersLabel}>
-        <div className="about-shell">
-          <p className="about-numbers-label">{t.numbersLabel}</p>
-          <div className="number-grid">
-            {t.numbers.map((item, index) => (
-              <div key={item.value}>
-                <span className="about-fact-index" aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
-              </div>
-            ))}
-          </div>
+        <div className="about-shell number-grid">
+          {t.numbers.map((item) => (
+            <div key={item.value}>
+              <strong>{item.value}</strong>
+              <span>{item.label}</span>
+            </div>
+          ))}
         </div>
       </section>
 
