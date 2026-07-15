@@ -148,18 +148,39 @@ export default async function AboutPage() {
                 {t.heritageImages[1].caption}
               </figcaption>
             </figure>
+
+            <figure className="about-heritage-figure about-heritage-figure-tertiary">
+              <div className="about-heritage-image">
+                <Image
+                  src="/about-heritage-anno-1941.png"
+                  alt={t.heritageImages[2].alt}
+                  fill
+                  sizes="(max-width: 800px) 100vw, 74vw"
+                />
+              </div>
+              <figcaption>
+                <span aria-hidden="true">03</span>
+                {t.heritageImages[2].caption}
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
       <section className="about-numbers" aria-label={t.numbersLabel}>
-        <div className="about-shell number-grid">
-          {t.numbers.map((item) => (
-            <div key={item.value}>
-              <strong>{item.value}</strong>
-              <span>{item.label}</span>
-            </div>
-          ))}
+        <div className="about-shell">
+          <p className="about-numbers-label">{t.numbersLabel}</p>
+          <div className="number-grid">
+            {t.numbers.map((item, index) => (
+              <div key={item.value}>
+                <span className="about-fact-index" aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

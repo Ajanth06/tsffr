@@ -59,6 +59,7 @@ export type Dictionary = {
     heritageImages: [
       { alt: string; caption: string },
       { alt: string; caption: string },
+      { alt: string; caption: string },
     ];
     story: { label: string; title: string };
     storyLead: string;
@@ -167,6 +168,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           alt: "Historic Tinnemans vessel moored in front of the S. Tinnemans shipyard in Maasbracht",
           caption: "The family shipyard in Maasbracht",
         },
+        {
+          alt: "Historic Tinnemans workboat outside the family shipyard in Maasbracht, founded in 1941",
+          caption: "Built by the family shipyard, established in 1941",
+        },
       ],
       story: { label: "Our story", title: "More than 80 years of Dutch craftsmanship" },
       storyLead:
@@ -211,10 +216,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       workshopCaptions: ["Precision welding", "Engineering & CNC", "Final assembly"],
       numbersLabel: "Company facts",
       numbers: [
-        { value: "80+", label: "Years of experience" },
-        { value: "100%", label: "Custom built" },
-        { value: "MADE IN", label: "THE NETHERLANDS" },
-        { value: "PROFESSIONAL", label: "Marine solutions" },
+        { value: "1941", label: "Our boatbuilding heritage began" },
+        { value: "IN HOUSE", label: "Design, engineering, build and testing" },
+        { value: "BESPOKE", label: "Every vessel" },
+        { value: "DUTCH BUILT", label: "Made in the Netherlands" },
       ],
       industries: { label: "Industries we serve", title: "Built for work that matters." },
       industryNames: [
@@ -323,6 +328,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           alt: "Historisches Tinnemans Schiff vor der Werft S. Tinnemans in Maasbracht",
           caption: "Die Familienwerft in Maasbracht",
         },
+        {
+          alt: "Historisches Tinnemans Arbeitsboot vor der 1941 gegründeten Familienwerft in Maasbracht",
+          caption: "Gebaut von der 1941 gegründeten Familienwerft",
+        },
       ],
       story: { label: "Unsere Geschichte", title: "Mehr als 80 Jahre niederländisches Handwerk" },
       storyLead:
@@ -367,10 +376,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       workshopCaptions: ["Präzisionsschweißen", "Engineering & CNC", "Endmontage"],
       numbersLabel: "Unternehmensfakten",
       numbers: [
-        { value: "80+", label: "Jahre Erfahrung" },
-        { value: "100%", label: "Maßgeschneidert" },
-        { value: "MADE IN", label: "DIE NIEDERLANDE" },
-        { value: "PROFESSIONAL", label: "Marine-Lösungen" },
+        { value: "1941", label: "Beginn unseres Bootsbauerbes" },
+        { value: "IN HOUSE", label: "Design, Engineering, Bau und Erprobung" },
+        { value: "INDIVIDUELL", label: "Jedes Schiff" },
+        { value: "DUTCH BUILT", label: "Gebaut in den Niederlanden" },
       ],
       industries: { label: "Branchen", title: "Gebaut für Arbeit, die zählt." },
       industryNames: [
@@ -479,6 +488,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           alt: "Historisch schip van Tinnemans voor scheepswerf S. Tinnemans in Maasbracht",
           caption: "De familiewerf in Maasbracht",
         },
+        {
+          alt: "Historische Tinnemans werkboot voor de in 1941 opgerichte familiewerf in Maasbracht",
+          caption: "Gebouwd door de familiewerf, opgericht in 1941",
+        },
       ],
       story: { label: "Ons verhaal", title: "Meer dan 80 jaar Nederlands vakmanschap" },
       storyLead:
@@ -523,10 +536,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       workshopCaptions: ["Precisielassen", "Engineering en CNC", "Eindmontage"],
       numbersLabel: "Bedrijfsfeiten",
       numbers: [
-        { value: "80+", label: "Jaar ervaring" },
-        { value: "100%", label: "Maatwerk" },
-        { value: "MADE IN", label: "NEDERLAND" },
-        { value: "PROFESSIONAL", label: "Maritieme oplossingen" },
+        { value: "1941", label: "Het begin van ons scheepsbouwerfgoed" },
+        { value: "IN HOUSE", label: "Ontwerp, engineering, bouw en testen" },
+        { value: "MAATWERK", label: "Elk vaartuig" },
+        { value: "DUTCH BUILT", label: "Gebouwd in Nederland" },
       ],
       industries: { label: "Sectoren", title: "Gebouwd voor werk dat ertoe doet." },
       industryNames: [
@@ -635,6 +648,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           alt: "سفينة Tinnemans تاريخية أمام حوض بناء السفن S. Tinnemans في ماسبراخت",
           caption: "حوض بناء السفن العائلي في ماسبراخت",
         },
+        {
+          alt: "قارب عمل تاريخي من Tinnemans أمام حوض بناء السفن العائلي الذي تأسس عام 1941 في ماسبراخت",
+          caption: "بناه حوض بناء السفن العائلي الذي تأسس عام 1941",
+        },
       ],
       story: { label: "قصتنا", title: "أكثر من 80 عامًا من الحرفية الهولندية" },
       storyLead:
@@ -679,10 +696,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
       workshopCaptions: ["لحام دقيق", "الهندسة وCNC", "التجميع النهائي"],
       numbersLabel: "حقائق عن الشركة",
       numbers: [
-        { value: "80+", label: "سنوات الخبرة" },
-        { value: "100%", label: "مصمم حسب الطلب" },
-        { value: "MADE IN", label: "هولندا" },
-        { value: "PROFESSIONAL", label: "حلول بحرية" },
+        { value: "1941", label: "بداية إرثنا في بناء السفن" },
+        { value: "IN HOUSE", label: "التصميم والهندسة والبناء والاختبار" },
+        { value: "حسب الطلب", label: "كل سفينة" },
+        { value: "DUTCH BUILT", label: "بنيت في هولندا" },
       ],
       industries: { label: "القطاعات", title: "مبني لعمل يهم." },
       industryNames: [
