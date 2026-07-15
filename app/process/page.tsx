@@ -13,6 +13,17 @@ const processImages = [
 
 const industryCodes = ["FF", "RS", "MP", "GV", "CF", "CM"] as const;
 
+function splitLines(text: string) {
+  const lines = text.split("\n");
+
+  return lines.map((line, index) => (
+    <span key={`${line}-${index}`}>
+      {line}
+      {index < lines.length - 1 ? <br /> : null}
+    </span>
+  ));
+}
+
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
   const { about: t } = getDictionary(locale);
@@ -26,22 +37,27 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ProcessPage() {
   const locale = await getLocale();
   const dict = getDictionary(locale);
-  const { about: t, common, nav } = dict;
+  const { about: t, nav } = dict;
 
   return (
     <main className="about-page process-page">
       <StandaloneHeader
         locale={locale}
-        common={common}
         nav={nav}
         headerHome={t.headerHome}
-        currentHref="/process"
-        currentOnly
       />
 
       <section className="standalone-hero" aria-labelledby="process-title">
+        <Image
+          src="/process-engineering-hero.png"
+          alt={t.processSteps[0].alt}
+          fill
+          sizes="100vw"
+          preload
+        />
         <div className="about-shell">
-          <h1 id="process-title">{t.process.title}</h1>
+          <h1 id="process-title">{splitLines(t.process.title)}</h1>
+          <p className="standalone-hero-lead">{t.process.lead}</p>
         </div>
       </section>
 

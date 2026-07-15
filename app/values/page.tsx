@@ -15,17 +15,14 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ValuesPage() {
   const locale = await getLocale();
   const dict = getDictionary(locale);
-  const { about: t, common, nav } = dict;
+  const { about: t, nav } = dict;
 
   return (
     <main className="about-page values-page">
       <StandaloneHeader
         locale={locale}
-        common={common}
         nav={nav}
         headerHome={t.headerHome}
-        currentHref="/values"
-        currentOnly
       />
 
       <section className="standalone-hero" aria-labelledby="values-title">

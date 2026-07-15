@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { BackHomeLink } from "../components/home-scroll";
 import { LanguageSwitcher } from "../components/language-switcher";
 import { getDictionary, getLocale } from "../../lib/i18n";
 
@@ -28,12 +27,11 @@ export default async function AboutPage() {
   const locale = await getLocale();
   const dict = getDictionary(locale);
   const { about: t, common, nav } = dict;
-  const mainNav = nav.slice(1, 2);
+  const mainNav = nav;
 
   return (
     <main className="about-page">
       <header className="about-page-header">
-        <BackHomeLink label={common.backHome} />
         <nav aria-label="About page navigation">
           {mainNav.map((item) => (
             <Link href={item.href} key={item.href}>
@@ -75,24 +73,81 @@ export default async function AboutPage() {
 
       <section className="about-section about-story-mission" id="story">
         <div className="about-grid about-story-mission-grid">
-          <div className="about-story-portrait">
-            <Image
-              className="about-story-portrait-image"
-              src="/about-director-headshot.png"
-              alt={t.storyImageAlt}
-              fill
-              sizes="(max-width: 800px) 100vw, 620px"
-            />
-          </div>
+          <aside className="about-story-aside">
+            <div className="about-story-portrait">
+              <Image
+                className="about-story-portrait-image"
+                src="/about-director-headshot.png"
+                alt={t.storyImageAlt}
+                fill
+                sizes="(max-width: 800px) 78vw, (max-width: 1200px) 34vw, 430px"
+              />
+            </div>
+            <div className="about-story-caption">
+              <span aria-hidden="true">1941</span>
+              <p>{t.storyImageAlt}</p>
+            </div>
+          </aside>
 
-          <div className="about-content">
+          <article className="about-content about-story-content">
+            <p className="section-label">{t.story.label}</p>
             <h2>{dict.home.aboutHeading}</h2>
 
             <div className="about-copy">
-              {dict.home.aboutParagraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 32)}>{paragraph}</p>
-              ))}
+              {dict.home.aboutParagraphs.map((paragraph, index) => {
+                const isStatement = [2, 4, 6, 9].includes(index);
+
+                return (
+                  <p
+                    className={index === 0 ? "story-opening" : isStatement ? "story-statement" : undefined}
+                    key={paragraph.slice(0, 32)}
+                  >
+                    {paragraph}
+                  </p>
+                );
+              })}
             </div>
+          </article>
+        </div>
+      </section>
+
+      <section className="about-heritage" aria-labelledby="heritage-title">
+        <div className="about-shell">
+          <div className="about-heritage-heading">
+            <p className="section-label">{t.story.label}</p>
+            <h2 id="heritage-title">{t.story.title}</h2>
+          </div>
+
+          <div className="about-heritage-gallery" aria-label={t.heritageGalleryLabel}>
+            <figure className="about-heritage-figure about-heritage-figure-primary">
+              <div className="about-heritage-image">
+                <Image
+                  src="/about-heritage-shipyard.png"
+                  alt={t.heritageImages[0].alt}
+                  fill
+                  sizes="(max-width: 800px) 100vw, 87vw"
+                />
+              </div>
+              <figcaption>
+                <span aria-hidden="true">01</span>
+                {t.heritageImages[0].caption}
+              </figcaption>
+            </figure>
+
+            <figure className="about-heritage-figure about-heritage-figure-secondary">
+              <div className="about-heritage-image">
+                <Image
+                  src="/about-heritage-tinnemans.png"
+                  alt={t.heritageImages[1].alt}
+                  fill
+                  sizes="(max-width: 800px) 100vw, 66vw"
+                />
+              </div>
+              <figcaption>
+                <span aria-hidden="true">02</span>
+                {t.heritageImages[1].caption}
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
