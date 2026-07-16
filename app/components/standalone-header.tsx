@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Dictionary, Locale } from "../../lib/i18n";
 import { LanguageSwitcher } from "./language-switcher";
 import { MobileMenu } from "./mobile-menu";
+import { MobileBackButton } from "./mobile-back-button";
 
 type StandaloneHeaderProps = {
   locale: Locale;
@@ -10,6 +11,7 @@ type StandaloneHeaderProps = {
   headerHome: string;
   openMenuLabel: string;
   closeMenuLabel: string;
+  backLabel: string;
 };
 
 export function StandaloneHeader({
@@ -18,9 +20,11 @@ export function StandaloneHeader({
   headerHome,
   openMenuLabel,
   closeMenuLabel,
+  backLabel,
 }: StandaloneHeaderProps) {
   return (
     <header className="about-page-header">
+      <MobileBackButton label={backLabel} />
       <nav className="desktop-nav" aria-label="Main navigation">
         {nav.map((item) => (
           <Link href={item.href} key={item.href}>

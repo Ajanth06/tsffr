@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { LanguageSwitcher } from "../components/language-switcher";
 import { MobileMenu } from "../components/mobile-menu";
+import { MobileBackButton } from "../components/mobile-back-button";
 import { getDictionary, getLocale } from "../../lib/i18n";
 
 function splitLines(text: string) {
@@ -32,6 +33,7 @@ export default async function AboutPage() {
   return (
     <main className="about-page">
       <header className="about-page-header">
+        <MobileBackButton label={common.back} />
         <nav className="desktop-nav" aria-label="About page navigation">
           {nav.map((item) => (
             <Link href={item.href} key={item.href}>
@@ -124,7 +126,6 @@ export default async function AboutPage() {
       <section className="about-heritage" aria-labelledby="heritage-title">
         <div className="about-shell">
           <div className="about-heritage-heading">
-            <p className="section-label">{t.story.label}</p>
             <h2 id="heritage-title">{t.story.title}</h2>
           </div>
 
