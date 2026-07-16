@@ -24,6 +24,7 @@ export type Dictionary = {
   };
   common: {
     openMenu: string;
+    closeMenu: string;
     brandHome: string;
     readMore: string;
     explore: string;
@@ -105,6 +106,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     common: {
       openMenu: "Open menu",
+      closeMenu: "Close menu",
       brandHome: "Tinn Silver Fire Fighting and Rescue home",
       readMore: "Read more",
       explore: "Explore our story",
@@ -266,6 +268,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     common: {
       openMenu: "Menü öffnen",
+      closeMenu: "Menü schließen",
       brandHome: "Tinn Silver Lösch- und Rettungsboote, Startseite",
       readMore: "Mehr erfahren",
       explore: "Unsere Geschichte entdecken",
@@ -427,6 +430,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     common: {
       openMenu: "Menu openen",
+      closeMenu: "Menu sluiten",
       brandHome: "Tinn Silver blus en reddingsboten, startpagina",
       readMore: "Lees meer",
       explore: "Ontdek ons verhaal",
@@ -588,6 +592,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     common: {
       openMenu: "فتح القائمة",
+      closeMenu: "إغلاق القائمة",
       brandHome: "Tinn Silver قوارب الإطفاء والإنقاذ، الصفحة الرئيسية",
       readMore: "اقرأ المزيد",
       explore: "استكشف قصتنا",

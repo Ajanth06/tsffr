@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ProcessPage() {
   const locale = await getLocale();
   const dict = getDictionary(locale);
-  const { about: t, nav } = dict;
+  const { about: t, nav, common } = dict;
 
   return (
     <main className="about-page process-page">
@@ -45,6 +45,8 @@ export default async function ProcessPage() {
         locale={locale}
         nav={nav}
         headerHome={t.headerHome}
+        openMenuLabel={common.openMenu}
+        closeMenuLabel={common.closeMenu}
       />
 
       <section className="standalone-hero" aria-labelledby="process-title">
