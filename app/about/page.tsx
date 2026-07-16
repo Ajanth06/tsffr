@@ -126,7 +126,6 @@ export default async function AboutPage() {
       <section className="about-heritage" aria-labelledby="heritage-title">
         <div className="about-shell">
           <div className="about-heritage-heading">
-            <p className="section-label">{t.story.label}</p>
             <h2 id="heritage-title">{t.story.title}</h2>
           </div>
 

@@ -9,11 +9,20 @@ type MobileBackButtonProps = {
 export function MobileBackButton({ label }: MobileBackButtonProps) {
   const router = useRouter();
 
+  function goBack() {
+    if (window.history.length > 1) {
+      router.back();
+      return;
+    }
+
+    router.push("/");
+  }
+
   return (
     <button
       className="mobile-back"
       type="button"
-      onClick={() => router.back()}
+      onClick={goBack}
       aria-label={label}
     >
       <span className="mobile-back-icon" aria-hidden="true">

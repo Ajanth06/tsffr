@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_Arabic } from "next/font/google";
 import "./globals.css";
+import { SiteFooter } from "./components/site-footer";
 import { getDictionary, getLocale } from "../lib/i18n";
 import { isRtlLocale } from "../lib/locale";
 
@@ -39,7 +40,10 @@ export default async function RootLayout({
       dir={rtl ? "rtl" : "ltr"}
       className={`${fontClass} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <SiteFooter locale={locale} />
+      </body>
     </html>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { StandaloneHeader } from "../components/standalone-header";
+import { QuoteForm } from "../components/quote-form";
 import { getDictionary, getLocale } from "../../lib/i18n";
 
 function Arrow() {
@@ -56,11 +57,12 @@ export default async function ContactPage() {
           <h1 id="contact-title">{splitLines(t.ctaTitle)}</h1>
           <span>{t.ctaLead}</span>
           <div>
-            <a href="mailto:info@tinn-silver.com">{t.ctaQuote} <Arrow /></a>
-            <a href="mailto:info@tinn-silver.com">{t.ctaContact}</a>
+            <a href="#quote-form">{t.ctaQuote} <Arrow /></a>
           </div>
         </div>
       </section>
+
+      <QuoteForm locale={locale} />
     </main>
   );
 }
