@@ -45,6 +45,7 @@ export default async function ContactPage() {
         headerHome={t.headerHome}
         openMenuLabel={common.openMenu}
         closeMenuLabel={common.closeMenu}
+        backLabel={common.back}
       />
 
       <section className="about-cta standalone-contact" aria-labelledby="contact-title">

@@ -27,6 +27,7 @@ export default async function ProjectPage() {
         headerHome={t.headerHome}
         openMenuLabel={common.openMenu}
         closeMenuLabel={common.closeMenu}
+        backLabel={common.back}
       />
 
       <section className="standalone-hero" aria-labelledby="project-title">
