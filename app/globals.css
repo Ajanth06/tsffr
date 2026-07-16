@@ -434,12 +434,6 @@ button {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.3;
-  transition: transform 180ms ease;
-}
-
-.hero-cta:hover svg,
-.hero-cta:focus-visible svg {
-  transform: translateX(9px);
 }
 
 .hero-index {

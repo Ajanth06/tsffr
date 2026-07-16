@@ -77,13 +77,13 @@ export default async function Home() {
             <span className="hero-heading-line">{t.heroLine2}</span>
           </h1>
           <p className="hero-description">{t.heroDescription}</p>
-          <Link className="hero-cta" href="/project">
-            <span>{t.heroCta}</span>
+          <span className="hero-cta">
+            {t.heroCta}
             <svg viewBox="0 0 52 18" aria-hidden="true">
               <path d="M1 9h47M42 2l7 7-7 7" />
               <circle cx="2" cy="9" r="1.5" />
             </svg>
-          </Link>
+          </span>
         </div>
         <div className="hero-transition" aria-hidden="true" />
       </section>

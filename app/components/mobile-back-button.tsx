@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 type MobileBackButtonProps = {
@@ -8,6 +9,17 @@ type MobileBackButtonProps = {
 
 export function MobileBackButton({ label }: MobileBackButtonProps) {
   const router = useRouter();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 720px)");
+    const updateVisibility = () => setIsMobile(mediaQuery.matches);
+
+    updateVisibility();
+    mediaQuery.addEventListener("change", updateVisibility);
+
+    return () => mediaQuery.removeEventListener("change", updateVisibility);
+  }, []);
 
   function goBack() {
     if (window.history.length > 1) {
@@ -17,6 +29,8 @@ export function MobileBackButton({ label }: MobileBackButtonProps) {
 
     router.push("/");
   }
+
+  if (!isMobile) return null;
 
   return (
     <button
