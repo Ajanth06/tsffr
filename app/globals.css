@@ -34,6 +34,11 @@ body {
   line-height: var(--leading-body);
 }
 
+.site-content {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
 button,
 a {
   color: inherit;
@@ -4072,37 +4077,48 @@ button {
 }
 
 .site-footer {
+  flex-shrink: 0;
   margin-top: auto;
-  border-top: 1px solid rgba(17, 21, 29, 0.12);
+  border-top: 1px solid rgba(17, 21, 29, 0.1);
   background: #fff;
 }
 
 .site-footer-inner {
   display: flex;
   justify-content: space-between;
-  gap: 24px;
   align-items: center;
-  padding: 18px clamp(24px, 4vw, 72px);
-}
-
-.site-footer p,
-.site-footer nav {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  flex-wrap: wrap;
+  gap: 16px 40px;
+  width: 100%;
+  padding: 22px clamp(32px, 4vw, 72px);
 }
 
 .site-footer p {
   margin: 0;
-  color: rgba(17, 21, 29, 0.7);
-  font-size: 14px;
+  color: rgba(17, 21, 29, 0.55);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.site-footer nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-shrink: 0;
 }
 
 .site-footer nav a {
-  font-size: 14px;
-  font-weight: var(--weight-semibold);
+  font-size: var(--text-label);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
   text-decoration: none;
+  color: rgba(17, 21, 29, 0.62);
+  transition: color 180ms ease;
+}
+
+.site-footer nav a:hover,
+.site-footer nav a:focus-visible {
+  color: var(--ink);
 }
 
 .legal-page {
@@ -4348,7 +4364,12 @@ button {
   .site-footer-inner {
     flex-direction: column;
     align-items: flex-start;
-    padding: 18px 20px 24px;
+    gap: 14px;
+    padding: 20px 24px 28px;
+  }
+
+  .site-footer nav {
+    gap: 22px;
   }
 
   .legal-page {

@@ -41,7 +41,7 @@ export default async function RootLayout({
       className={`${fontClass} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        {children}
+        <div className="site-content">{children}</div>
         <SiteFooter locale={locale} />
       </body>
     </html>
