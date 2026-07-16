@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { LanguageSwitcher } from "./components/language-switcher";
+import { MobileMenu } from "./components/mobile-menu";
 import { getDictionary, getLocale } from "../lib/i18n";
 
 function Brand({ label }: { label: string }) {
@@ -48,10 +49,12 @@ export default async function Home() {
 
         <div className="header-end">
           <LanguageSwitcher locale={locale} />
-          <button className="menu-button" type="button" aria-label={common.openMenu}>
-            <span />
-            <span />
-          </button>
+          <MobileMenu
+            nav={nav}
+            locale={locale}
+            openMenuLabel={common.openMenu}
+            closeMenuLabel={common.closeMenu}
+          />
         </div>
       </header>
 

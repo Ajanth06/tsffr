@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { LanguageSwitcher } from "../components/language-switcher";
+import { MobileMenu } from "../components/mobile-menu";
 import { getDictionary, getLocale } from "../../lib/i18n";
 
 function splitLines(text: string) {
@@ -27,13 +28,12 @@ export default async function AboutPage() {
   const locale = await getLocale();
   const dict = getDictionary(locale);
   const { about: t, common, nav } = dict;
-  const mainNav = nav;
 
   return (
     <main className="about-page">
       <header className="about-page-header">
-        <nav aria-label="About page navigation">
-          {mainNav.map((item) => (
+        <nav className="desktop-nav" aria-label="About page navigation">
+          {nav.map((item) => (
             <Link href={item.href} key={item.href}>
               {item.label}
             </Link>
@@ -41,6 +41,13 @@ export default async function AboutPage() {
         </nav>
         <div className="about-header-end">
           <LanguageSwitcher locale={locale} variant="light" />
+          <MobileMenu
+            nav={nav}
+            locale={locale}
+            openMenuLabel={common.openMenu}
+            closeMenuLabel={common.closeMenu}
+            variant="light"
+          />
           <Link href="/" className="about-header-logo" aria-label={t.headerHome}>
             <Image
               src="/tsffr-logo-white.png"

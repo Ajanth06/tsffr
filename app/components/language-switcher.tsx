@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useTransition } from "react";
 import { LOCALE_COOKIE, LOCALES, type Locale } from "../../lib/locale";
 
 type LanguageSwitcherProps = {
@@ -24,11 +25,14 @@ const ARIA_LABELS: Record<Locale, string> = {
 
 export function LanguageSwitcher({ locale, variant = "dark" }: LanguageSwitcherProps) {
   const router = useRouter();
+  const [, startTransition] = useTransition();
 
   function switchLocale(nextLocale: Locale) {
     if (nextLocale === locale) return;
-    document.cookie = `${LOCALE_COOKIE}=${nextLocale};path=/;max-age=31536000;SameSite=Lax`;
-    router.refresh();
+    startTransition(() => {
+      document.cookie = `${LOCALE_COOKIE}=${nextLocale};path=/;max-age=31536000;SameSite=Lax`;
+      router.refresh();
+    });
   }
 
   return (

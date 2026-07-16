@@ -35,7 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ContactPage() {
   const locale = await getLocale();
   const dict = getDictionary(locale);
-  const { about: t, nav } = dict;
+  const { about: t, nav, common } = dict;
 
   return (
     <main className="about-page contact-page">
@@ -43,6 +43,8 @@ export default async function ContactPage() {
         locale={locale}
         nav={nav}
         headerHome={t.headerHome}
+        openMenuLabel={common.openMenu}
+        closeMenuLabel={common.closeMenu}
       />
 
       <section className="about-cta standalone-contact" aria-labelledby="contact-title">
