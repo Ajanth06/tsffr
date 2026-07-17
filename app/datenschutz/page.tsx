@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { LegalDocument } from "../components/legal-document";
-import { getLocale } from "../../lib/i18n";
+import { getDictionary, getLocale } from "../../lib/i18n";
 import { legalMetadata, privacyCopy } from "../../lib/legal-copy";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -10,5 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function DatenschutzPage() {
   const locale = await getLocale();
-  return <LegalDocument copy={privacyCopy[locale]} />;
+  const { common } = getDictionary(locale);
+
+  return <LegalDocument backLabel={common.back} copy={privacyCopy[locale]} />;
 }
