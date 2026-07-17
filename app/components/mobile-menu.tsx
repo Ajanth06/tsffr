@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import type { Locale, NavItem } from "../../lib/i18n";
 import { LanguageSwitcher } from "./language-switcher";
@@ -44,10 +45,12 @@ export function MobileMenu({
   closeMenuLabel,
   variant = "dark",
 }: MobileMenuProps) {
-  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const [menuState, setMenuState] = useState({ pathname, open: false });
+  const open = menuState.pathname === pathname && menuState.open;
 
   function close() {
-    setOpen(false);
+    setMenuState({ pathname, open: false });
   }
 
   useEffect(() => {
@@ -56,7 +59,9 @@ export function MobileMenu({
     document.body.style.overflow = "hidden";
 
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") close();
+      if (event.key === "Escape") {
+        setMenuState({ pathname, open: false });
+      }
     }
 
     window.addEventListener("keydown", onKeyDown);
@@ -65,7 +70,7 @@ export function MobileMenu({
       document.body.style.overflow = "";
       window.removeEventListener("keydown", onKeyDown);
     };
-  }, [open]);
+  }, [open, pathname]);
 
   return (
     <>
@@ -75,7 +80,12 @@ export function MobileMenu({
         aria-label={open ? closeMenuLabel : openMenuLabel}
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
-        onClick={() => setOpen((current) => !current)}
+        onClick={() =>
+          setMenuState((current) => ({
+            pathname,
+            open: current.pathname === pathname ? !current.open : true,
+          }))
+        }
       >
         <span />
         <span />
