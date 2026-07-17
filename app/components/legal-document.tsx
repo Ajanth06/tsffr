@@ -1,3 +1,5 @@
+import { LegalCloseButton } from "./legal-close-button";
+
 export type LegalContentBlock =
   | { type: "paragraph"; text: string }
   | { type: "list"; items: string[] };
@@ -42,34 +44,45 @@ function LegalText({ text }: { text: string }) {
   ));
 }
 
-export function LegalDocument({ copy }: { copy: LegalDocumentCopy }) {
-  return (
-    <main className="legal-page">
-      <div className="legal-shell">
-        <p className="legal-eyebrow">{copy.eyebrow}</p>
-        <h1>{copy.title}</h1>
-        <p className="legal-lead">{copy.lead}</p>
+type LegalDocumentProps = {
+  backLabel: string;
+  copy: LegalDocumentCopy;
+  variant?: "default" | "imprint";
+};
 
-        {copy.sections.map((section) => (
-          <section key={section.title}>
-            <h2>{section.title}</h2>
-            {section.content.map((block, index) =>
-              block.type === "paragraph" ? (
-                <p key={`${section.title}-p-${index}`}>
-                  <LegalText text={block.text} />
-                </p>
-              ) : (
-                <ul key={`${section.title}-list-${index}`}>
-                  {block.items.map((item) => (
-                    <li key={item}>
-                      <LegalText text={item} />
-                    </li>
-                  ))}
-                </ul>
-              ),
-            )}
-          </section>
-        ))}
+export function LegalDocument({ backLabel, copy, variant = "default" }: LegalDocumentProps) {
+  return (
+    <main className={`legal-page legal-page--${variant}`}>
+      <LegalCloseButton label={backLabel} />
+      <div className="legal-shell">
+        <header className="legal-heading">
+          <p className="legal-eyebrow">{copy.eyebrow}</p>
+          <h1>{copy.title}</h1>
+          <p className="legal-lead">{copy.lead}</p>
+        </header>
+
+        <div className="legal-sections">
+          {copy.sections.map((section) => (
+            <section key={section.title}>
+              <h2>{section.title}</h2>
+              {section.content.map((block, index) =>
+                block.type === "paragraph" ? (
+                  <p key={`${section.title}-p-${index}`}>
+                    <LegalText text={block.text} />
+                  </p>
+                ) : (
+                  <ul key={`${section.title}-list-${index}`}>
+                    {block.items.map((item) => (
+                      <li key={item}>
+                        <LegalText text={item} />
+                      </li>
+                    ))}
+                  </ul>
+                ),
+              )}
+            </section>
+          ))}
+        </div>
 
         <p className="legal-updated">{copy.updated}</p>
       </div>

@@ -20,8 +20,8 @@ const directors: Record<Locale, string> = {
 
 export const imprintCopy: Record<Locale, LegalDocumentCopy> = {
   en: {
-    eyebrow: "Legal",
-    title: "Legal Notice",
+    eyebrow: "Company information",
+    title: "Imprint",
     lead: "Provider information pursuant to Section 5 of the German Digital Services Act (DDG) and Section 18(2) of the German State Media Treaty (MStV).",
     updated: "Last updated: 16 July 2026",
     sections: [
@@ -37,7 +37,7 @@ export const imprintCopy: Record<Locale, LegalDocumentCopy> = {
     ],
   },
   de: {
-    eyebrow: "Rechtliches",
+    eyebrow: "Unternehmensangaben",
     title: "Impressum",
     lead: "Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG) und § 18 Abs. 2 Medienstaatsvertrag (MStV).",
     updated: "Stand: 16. Juli 2026",
@@ -54,7 +54,7 @@ export const imprintCopy: Record<Locale, LegalDocumentCopy> = {
     ],
   },
   nl: {
-    eyebrow: "Juridisch",
+    eyebrow: "Bedrijfsgegevens",
     title: "Colofon",
     lead: "Informatie over de aanbieder overeenkomstig § 5 van de Duitse Digitaledienstenwet (DDG) en § 18 lid 2 van het Duitse Mediastaatsverdrag (MStV).",
     updated: "Laatst bijgewerkt: 16 juli 2026",
@@ -71,7 +71,7 @@ export const imprintCopy: Record<Locale, LegalDocumentCopy> = {
     ],
   },
   ar: {
-    eyebrow: "معلومات قانونية",
+    eyebrow: "معلومات الشركة",
     title: "بيانات النشر",
     lead: "بيانات مقدم الخدمة وفقًا للمادة 5 من قانون الخدمات الرقمية الألماني (DDG) والمادة 18 الفقرة 2 من معاهدة الإعلام الحكومية الألمانية (MStV).",
     updated: "آخر تحديث: 16 يوليو 2026",
@@ -198,7 +198,7 @@ export const legalMetadata: Record<Locale, {
   privacy: { title: string; description: string };
 }> = {
   en: {
-    imprint: { title: "Legal Notice | Tinn Silver", description: "Legal and provider information for Tinn Silver Fire Fighting and Rescue B.V." },
+    imprint: { title: "Imprint | Tinn Silver", description: "Legal and provider information for Tinn Silver Fire Fighting and Rescue B.V." },
     privacy: { title: "Privacy Policy | Tinn Silver", description: "Privacy information for visitors to the Tinn Silver Fire Fighting and Rescue B.V. website." },
   },
   de: {

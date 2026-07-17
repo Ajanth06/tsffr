@@ -4122,17 +4122,68 @@ button {
 }
 
 .legal-page {
+  position: relative;
   padding: clamp(120px, 12vw, 168px) 24px 88px;
   background: var(--paper);
 }
 
+.legal-close {
+  position: fixed;
+  z-index: 20;
+  top: 24px;
+  inset-inline-end: clamp(20px, 3vw, 48px);
+  display: inline-flex;
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: 1px solid rgba(17, 21, 29, 0.2);
+  border-radius: 999px;
+  background: rgba(247, 247, 245, 0.92);
+  color: var(--ink);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.legal-close span {
+  display: block;
+  font-size: 31px;
+  font-weight: 300;
+  line-height: 0.8;
+}
+
+.legal-close:hover,
+.legal-close:focus-visible {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.legal-close:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
 .legal-shell {
-  width: min(860px, 100%);
+  width: min(900px, 100%);
   margin: 0 auto;
+}
+
+.legal-heading {
+  max-width: 760px;
+  margin-bottom: 48px;
 }
 
 .legal-eyebrow {
   margin: 0 0 14px;
+  color: rgba(17, 21, 29, 0.58);
   font-size: var(--text-label);
   font-weight: var(--weight-bold);
   letter-spacing: var(--tracking-label);
@@ -4148,26 +4199,38 @@ button {
 
 .legal-lead {
   max-width: 720px;
-  margin: 22px 0 42px;
+  margin: 22px 0 0;
   color: rgba(17, 21, 29, 0.75);
   font-size: 19px;
+  line-height: 1.65;
 }
 
-.legal-page section + section {
-  margin-top: 30px;
+.legal-sections {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 16px;
+}
+
+.legal-page section {
+  min-width: 0;
+  padding: 28px 30px 30px;
+  border: 1px solid rgba(17, 21, 29, 0.11);
+  background: #fff;
 }
 
 .legal-page h2 {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-size: 22px;
   line-height: 1.25;
 }
 
-.legal-page p {
+.legal-page section p {
   margin: 0;
+  color: rgba(17, 21, 29, 0.76);
+  line-height: 1.7;
 }
 
-.legal-page p + p {
+.legal-page section p + p {
   margin-top: 14px;
 }
 
@@ -4182,12 +4245,55 @@ button {
 
 .legal-page a {
   color: inherit;
+  overflow-wrap: anywhere;
 }
 
 .legal-updated {
-  margin-top: 40px !important;
+  margin-top: 32px !important;
   color: rgba(17, 21, 29, 0.62);
   font-size: 14px;
+}
+
+.legal-page--imprint .legal-shell {
+  width: min(980px, 100%);
+}
+
+.legal-page--imprint .legal-sections {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  counter-reset: imprint-section;
+}
+
+.legal-page--imprint section {
+  counter-increment: imprint-section;
+}
+
+.legal-page--imprint section:nth-child(n + 5) {
+  grid-column: 1 / -1;
+}
+
+.legal-page--imprint h2 {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.legal-page--imprint h2::before {
+  color: rgba(17, 21, 29, 0.4);
+  font-size: 12px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.08em;
+  content: counter(imprint-section, decimal-leading-zero);
+}
+
+.legal-page--imprint section > :not(h2) {
+  margin-left: 44px;
+}
+
+[dir="rtl"] .legal-page--imprint section > :not(h2) {
+  margin-right: 44px;
+  margin-left: 0;
 }
 
 [dir="rtl"] .about-page-hero {
@@ -4376,8 +4482,40 @@ button {
     padding: 110px 20px 72px;
   }
 
+  .legal-close {
+    top: 16px;
+    inset-inline-end: 16px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .legal-heading {
+    margin-bottom: 36px;
+  }
+
   .legal-lead {
     font-size: 17px;
+  }
+
+  .legal-page--imprint .legal-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-page--imprint section,
+  .legal-page--imprint section:nth-child(n + 5) {
+    grid-column: 1;
+  }
+
+  .legal-page section {
+    padding: 24px 22px 26px;
+  }
+
+  .legal-page--imprint section > :not(h2) {
+    margin-left: 0;
+  }
+
+  [dir="rtl"] .legal-page--imprint section > :not(h2) {
+    margin-right: 0;
   }
 
   [dir="rtl"] .hero {
