@@ -106,7 +106,7 @@ export async function sendQuoteRequest(
   try {
     await transporter.sendMail({
       from: `TSFFR Website <${smtpUser}>`,
-      to: "info@tsffr.com",
+      to: ["info@tsffr.com", "Debby.Tinnemans@tsffr.com"],
       replyTo: email,
       subject: `Website quote request — ${subjectCompany}`,
       text: plainText,
