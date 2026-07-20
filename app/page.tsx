@@ -62,7 +62,7 @@ export default async function Home() {
         <div className="hero-image-wrap" aria-hidden="true">
           <Image
             className="hero-image"
-            src="/home-hero-dlrg-rescue-boat.jpg"
+            src="/home-hero-rescue-boat-4k.jpg"
             alt={t.heroImageAlt}
             fill
             sizes="100vw"

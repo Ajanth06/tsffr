@@ -342,28 +342,21 @@ button {
   inset: 0;
   z-index: -3;
   overflow: hidden;
-  background: #263943;
 }
 
 .hero-image {
   object-fit: cover;
-  object-position: center;
-  transform: translate(22%, -6%);
-  transform-origin: center;
+  object-position: center right;
 }
 
 .hero-wash {
   position: absolute;
   z-index: -2;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(244, 246, 250, 0.98) 0%,
-    rgba(244, 246, 250, 0.94) 30%,
-    rgba(244, 246, 250, 0.72) 46%,
-    rgba(244, 246, 250, 0.24) 64%,
-    rgba(244, 246, 250, 0.04) 82%
-  );
+  background:
+    linear-gradient(90deg, rgba(238, 239, 246, 0.93) 0%, rgba(238, 239, 246, 0.8) 28%, rgba(238, 239, 246, 0.22) 53%, rgba(31, 34, 60, 0.11) 100%),
+    rgba(92, 91, 143, 0.08);
+  mix-blend-mode: multiply;
 }
 
 .hero::after {
@@ -3169,21 +3162,11 @@ button {
   }
 
   .hero-image {
-    object-fit: contain;
-    object-position: center top;
-    transform: scale(0.94) translate(7%, -3%);
-    transform-origin: center top;
+    object-position: 66% center;
   }
 
   .hero-wash {
-    background: linear-gradient(
-      180deg,
-      rgba(238, 241, 247, 0.04) 8%,
-      rgba(238, 241, 247, 0.28) 34%,
-      rgba(238, 241, 247, 0.82) 58%,
-      rgba(238, 241, 247, 0.97) 76%,
-      rgba(238, 241, 247, 0.99) 100%
-    );
+    background: linear-gradient(180deg, rgba(229,234,242,0.05) 18%, rgba(225,229,238,0.32) 47%, rgba(231,233,241,0.95) 76%, rgba(231,233,241,0.98) 100%);
     mix-blend-mode: normal;
   }
 
@@ -3242,41 +3225,17 @@ button {
 }
 
 [dir="rtl"] .hero-wash {
-  background: linear-gradient(
-    270deg,
-    rgba(244, 246, 250, 0.98) 0%,
-    rgba(244, 246, 250, 0.94) 30%,
-    rgba(244, 246, 250, 0.72) 46%,
-    rgba(244, 246, 250, 0.24) 64%,
-    rgba(244, 246, 250, 0.04) 82%
-  );
+  background:
+    linear-gradient(270deg, rgba(238, 239, 246, 0.93) 0%, rgba(238, 239, 246, 0.8) 28%, rgba(238, 239, 246, 0.22) 53%, rgba(31, 34, 60, 0.11) 100%),
+    rgba(92, 91, 143, 0.08);
 }
 
 [dir="rtl"] .hero-image {
-  object-position: center;
-  transform: translate(-22%, -6%);
+  object-position: 78% center;
 }
 
 [dir="rtl"] .hero-heading-line {
   white-space: normal;
-}
-
-@media (max-width: 720px) {
-  [dir="rtl"] .hero-image {
-    object-position: center top;
-    transform: scale(0.94) translate(-7%, -3%);
-  }
-
-  [dir="rtl"] .hero-wash {
-    background: linear-gradient(
-      180deg,
-      rgba(238, 241, 247, 0.04) 8%,
-      rgba(238, 241, 247, 0.28) 34%,
-      rgba(238, 241, 247, 0.82) 58%,
-      rgba(238, 241, 247, 0.97) 76%,
-      rgba(238, 241, 247, 0.99) 100%
-    );
-  }
 }
 
 [dir="rtl"] .header-end {

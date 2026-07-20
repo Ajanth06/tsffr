@@ -136,7 +136,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heroDescription:
         "Explore our advanced firefighting and rescue boats designed for safety and efficiency in emergency situations.",
       heroCta: "Discover our boats",
-      heroImageAlt: "Red DLRG water rescue boat underway at sea",
+      heroImageAlt: "Two crew members aboard a modern fishing and rescue boat at sea",
       aboutHeading: "Since 1941, delivering Dutch boatbuilding expertise.",
       aboutParagraphs: [
         "Some legacies are inherited. Others are built.",
@@ -299,7 +299,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heroDescription:
         "Entdecken Sie unsere fortschrittlichen Lösch und Rettungsboote, die für Sicherheit und Effizienz im Einsatz entwickelt wurden.",
       heroCta: "Unsere Boote entdecken",
-      heroImageAlt: "Rotes DLRG-Wasserrettungsboot in Fahrt auf See",
+      heroImageAlt: "Zwei Besatzungsmitglieder auf einem modernen Rettungsboot auf See",
       aboutHeading: "Seit 1941 liefern wir niederländische Bootsbau-Expertise.",
       aboutParagraphs: [
         "Manche Vermächtnisse erbt man. Andere baut man.",
@@ -462,7 +462,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heroDescription:
         "Ontdek onze geavanceerde blus en reddingsboten, ontwikkeld voor veiligheid en efficiëntie tijdens inzet.",
       heroCta: "Ontdek onze boten",
-      heroImageAlt: "Rode DLRG-waterreddingsboot varend op zee",
+      heroImageAlt: "Twee bemanningsleden aan boord van een modern reddingsboot op zee",
       aboutHeading: "Sinds 1941 leveren wij Nederlandse bootbouwexpertise.",
       aboutParagraphs: [
         "Sommige erfenissen worden geërfd. Andere worden gebouwd.",
@@ -625,7 +625,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       heroDescription:
         "اكتشفوا قوارب الإطفاء والإنقاذ المتطورة لدينا، المصممة للسلامة والكفاءة أثناء المهام.",
       heroCta: "اكتشف قواربنا",
-      heroImageAlt: "قارب إنقاذ مائي أحمر تابع لـ DLRG أثناء الإبحار",
+      heroImageAlt: "عضوان في الطاقم على متن قارب إنقاذ حديث في البحر",
       aboutHeading: "منذ 1941، نقدم خبرة بناء السفن الهولندية.",
       aboutParagraphs: [
         "بعض الإرث يُورَث. وبعضه يُبنى.",
