@@ -34,7 +34,7 @@ export const legalServices = {
 } as const;
 
 export const legalMeta = {
-  updatedAt: "16. Juli 2026",
+  updatedAt: "21. Juli 2026",
 } as const;
 
 export function formatLegalAddress() {

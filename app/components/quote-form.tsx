@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import type { Locale } from "../../lib/locale";
 import { initialQuoteFormState } from "../../lib/contact-form";
 import { sendQuoteRequest } from "../contact/actions";
@@ -22,7 +22,17 @@ type FormLabels = {
   submit: string;
   sending: string;
   another: string;
+  location: string;
+  loadMap: string;
+  mapNotice: string;
+  openMaps: string;
+  mapTitle: string;
 };
+
+const locationAddress = "Industrieweg 18, 6051 AE Maasbracht, Netherlands";
+const encodedLocationAddress = encodeURIComponent(locationAddress);
+const mapEmbedUrl = `https://www.google.com/maps?q=${encodedLocationAddress}&z=15&output=embed`;
+const mapDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodedLocationAddress}`;
 
 const labels: Record<Locale, FormLabels> = {
   en: {
@@ -41,6 +51,11 @@ const labels: Record<Locale, FormLabels> = {
     submit: "Send request",
     sending: "Sending...",
     another: "Send another request",
+    location: "Our location",
+    loadMap: "Load Google Maps",
+    mapNotice: "Google Maps only connects after you click.",
+    openMaps: "Plan your route",
+    mapTitle: "Google Map showing our location in Maasbracht",
   },
   de: {
     eyebrow: "Angebot anfragen",
@@ -58,6 +73,11 @@ const labels: Record<Locale, FormLabels> = {
     submit: "Anfrage senden",
     sending: "Wird gesendet...",
     another: "Weitere Anfrage senden",
+    location: "Unser Standort",
+    loadMap: "Google Maps laden",
+    mapNotice: "Google Maps verbindet sich erst nach Ihrem Klick.",
+    openMaps: "Route planen",
+    mapTitle: "Google-Karte mit unserem Standort in Maasbracht",
   },
   nl: {
     eyebrow: "Offerte aanvragen",
@@ -75,6 +95,11 @@ const labels: Record<Locale, FormLabels> = {
     submit: "Aanvraag versturen",
     sending: "Wordt verzonden...",
     another: "Nog een aanvraag versturen",
+    location: "Onze locatie",
+    loadMap: "Google Maps laden",
+    mapNotice: "Google Maps maakt pas na uw klik verbinding.",
+    openMaps: "Route plannen",
+    mapTitle: "Google-kaart met onze locatie in Maasbracht",
   },
   ar: {
     eyebrow: "طلب عرض سعر",
@@ -92,11 +117,17 @@ const labels: Record<Locale, FormLabels> = {
     submit: "إرسال الطلب",
     sending: "جارٍ الإرسال...",
     another: "إرسال طلب آخر",
+    location: "موقعنا",
+    loadMap: "تحميل خرائط Google",
+    mapNotice: "يتم الاتصال بخرائط Google بعد النقر فقط.",
+    openMaps: "خطط لمسارك",
+    mapTitle: "خريطة Google تعرض موقعنا في ماسبراخت",
   },
 };
 
 export function QuoteForm({ locale }: { locale: Locale }) {
   const copy = labels[locale];
+  const [mapLoaded, setMapLoaded] = useState(false);
   const [state, formAction, pending] = useActionState(
     sendQuoteRequest,
     initialQuoteFormState,
@@ -109,6 +140,47 @@ export function QuoteForm({ locale }: { locale: Locale }) {
           <p className="section-label">{copy.eyebrow}</p>
           <h2 id="quote-form-title">{copy.title}</h2>
           <p>{copy.intro}</p>
+
+          <div className="contact-location">
+            <div className="contact-location-map">
+              {mapLoaded ? (
+                <iframe
+                  src={mapEmbedUrl}
+                  title={copy.mapTitle}
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              ) : (
+                <div className="contact-map-consent">
+                  <span className="contact-map-pin" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 21s6-5.7 6-12a6 6 0 1 0-12 0c0 6.3 6 12 6 12Z" />
+                      <circle cx="12" cy="9" r="2.25" />
+                    </svg>
+                  </span>
+                  <button type="button" onClick={() => setMapLoaded(true)}>
+                    {copy.loadMap}
+                  </button>
+                  <small>{copy.mapNotice}</small>
+                </div>
+              )}
+            </div>
+            <div className="contact-location-details">
+              <span>{copy.location}</span>
+              <strong>Tinn Silver</strong>
+              <address>
+                Industrieweg 18<br />
+                6051 AE Maasbracht, Netherlands
+              </address>
+              <a href={mapDirectionsUrl} target="_blank" rel="noreferrer">
+                {copy.openMaps}
+                <svg viewBox="0 0 42 14" aria-hidden="true">
+                  <path d="M1 7h38M34 2l5 5-5 5" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div className="quote-form-card" id="quote-form">

@@ -163,7 +163,7 @@ export default async function AboutPage() {
             <figure className="about-heritage-figure about-heritage-figure-tertiary">
               <div className="about-heritage-image">
                 <Image
-                  src="/about-heritage-anno-1941.png"
+                  src="/about-heritage-anno-1937.png"
                   alt={t.heritageImages[2].alt}
                   fill
                   sizes="(max-width: 800px) 100vw, 74vw"

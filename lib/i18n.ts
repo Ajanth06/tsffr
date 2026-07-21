@@ -137,7 +137,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Explore our advanced firefighting and rescue boats designed for safety and efficiency in emergency situations.",
       heroCta: "Discover our boats",
       heroImageAlt: "Two crew members aboard a modern fishing and rescue boat at sea",
-      aboutHeading: "Since 1941, delivering Dutch boatbuilding expertise.",
+      aboutHeading: "Since 1937, delivering Dutch boatbuilding expertise.",
       aboutParagraphs: [
         "Some legacies are inherited. Others are built.",
         "Ours began more than 85 years ago on the waterways of the Netherlands, where our grandfather, Senior Tinnemans, earned his reputation as a master craftsman building wooden inland cargo vessels. Every beam he shaped and every vessel he completed reflected values that cannot be manufactured. Dedication, integrity, precision, and pride in one's work.",
@@ -175,8 +175,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           caption: "The family shipyard in Maasbracht",
         },
         {
-          alt: "Historic Tinnemans workboat outside the family shipyard in Maasbracht, founded in 1941",
-          caption: "Built by the family shipyard, established in 1941",
+          alt: "Historic Tinnemans workboat outside the family shipyard in Maasbracht, founded in 1937",
+          caption: "Built by the family shipyard, established in 1937",
         },
       ],
       story: { label: "Our Heritage", title: "More than 80 years of Dutch craftsmanship" },
@@ -222,7 +222,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       workshopCaptions: ["Precision welding", "Engineering & CNC", "Final assembly"],
       numbersLabel: "Company facts",
       numbers: [
-        { value: "1941", label: "Dutch boatbuilding heritage" },
+        { value: "1937", label: "Dutch boatbuilding heritage" },
         { value: "30+", label: "Years of aluminium boatbuilding" },
         { value: "ONE ROOF", label: "Design, engineering, build and testing" },
         { value: "TAILORED", label: "Every vessel built for its mission" },
@@ -300,7 +300,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Entdecken Sie unsere fortschrittlichen Lösch und Rettungsboote, die für Sicherheit und Effizienz im Einsatz entwickelt wurden.",
       heroCta: "Unsere Boote entdecken",
       heroImageAlt: "Zwei Besatzungsmitglieder auf einem modernen Rettungsboot auf See",
-      aboutHeading: "Seit 1941 liefern wir niederländische Bootsbau-Expertise.",
+      aboutHeading: "Seit 1937 liefern wir niederländische Bootsbau-Expertise.",
       aboutParagraphs: [
         "Manche Vermächtnisse erbt man. Andere baut man.",
         "Unseres begann vor mehr als 85 Jahren auf den Wasserwegen der Niederlande, wo unser Großvater, Senior Tinnemans, seinen Ruf als Meisterhandwerker beim Bau hölzerner Binnenschiffe erwarb. Jeder Balken, den er formte, und jedes Schiff, das er vollendete, spiegelte Werte wider, die man nicht herstellen kann. Hingabe, Integrität, Präzision und Stolz auf die eigene Arbeit.",
@@ -338,8 +338,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           caption: "Die Familienwerft in Maasbracht",
         },
         {
-          alt: "Historisches Tinnemans Arbeitsboot vor der 1941 gegründeten Familienwerft in Maasbracht",
-          caption: "Gebaut von der 1941 gegründeten Familienwerft",
+          alt: "Historisches Tinnemans Arbeitsboot vor der 1937 gegründeten Familienwerft in Maasbracht",
+          caption: "Gebaut von der 1937 gegründeten Familienwerft",
         },
       ],
       story: { label: "Unser Erbe", title: "Mehr als 80 Jahre niederländisches Handwerk" },
@@ -385,7 +385,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       workshopCaptions: ["Präzisionsschweißen", "Engineering & CNC", "Endmontage"],
       numbersLabel: "Unternehmensfakten",
       numbers: [
-        { value: "1941", label: "Niederländisches Bootsbauerbe" },
+        { value: "1937", label: "Niederländisches Bootsbauerbe" },
         { value: "30+", label: "Jahre Aluminiumbootbau" },
         { value: "EIN DACH", label: "Design, Engineering, Bau und Erprobung" },
         { value: "EIN UNIKAT", label: "Jedes Schiff für seinen Einsatz gebaut" },
@@ -463,7 +463,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "Ontdek onze geavanceerde blus en reddingsboten, ontwikkeld voor veiligheid en efficiëntie tijdens inzet.",
       heroCta: "Ontdek onze boten",
       heroImageAlt: "Twee bemanningsleden aan boord van een modern reddingsboot op zee",
-      aboutHeading: "Sinds 1941 leveren wij Nederlandse bootbouwexpertise.",
+      aboutHeading: "Sinds 1937 leveren wij Nederlandse bootbouwexpertise.",
       aboutParagraphs: [
         "Sommige erfenissen worden geërfd. Andere worden gebouwd.",
         "Het onze begon meer dan 85 jaar geleden op de Nederlandse waterwegen, waar onze grootvader, Senior Tinnemans, zijn reputatie verdiende als meesterbouwer van houten binnenvaartschepen. Elke balk die hij vormde en elk schip dat hij voltooide, weerspiegelde waarden die niet te vervaardigen zijn. Toewijding, integriteit, precisie en trots op het eigen werk.",
@@ -501,8 +501,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           caption: "De familiewerf in Maasbracht",
         },
         {
-          alt: "Historische Tinnemans werkboot voor de in 1941 opgerichte familiewerf in Maasbracht",
-          caption: "Gebouwd door de familiewerf, opgericht in 1941",
+          alt: "Historische Tinnemans werkboot voor de in 1937 opgerichte familiewerf in Maasbracht",
+          caption: "Gebouwd door de familiewerf, opgericht in 1937",
         },
       ],
       story: { label: "Ons erfgoed", title: "Meer dan 80 jaar Nederlands vakmanschap" },
@@ -548,7 +548,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       workshopCaptions: ["Precisielassen", "Engineering en CNC", "Eindmontage"],
       numbersLabel: "Bedrijfsfeiten",
       numbers: [
-        { value: "1941", label: "Nederlands scheepsbouwerfgoed" },
+        { value: "1937", label: "Nederlands scheepsbouwerfgoed" },
         { value: "30+", label: "Jaar aluminium scheepsbouw" },
         { value: "EEN DAK", label: "Ontwerp, engineering, bouw en testen" },
         { value: "UNIEK", label: "Elk vaartuig gebouwd voor zijn missie" },
@@ -626,7 +626,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         "اكتشفوا قوارب الإطفاء والإنقاذ المتطورة لدينا، المصممة للسلامة والكفاءة أثناء المهام.",
       heroCta: "اكتشف قواربنا",
       heroImageAlt: "عضوان في الطاقم على متن قارب إنقاذ حديث في البحر",
-      aboutHeading: "منذ 1941، نقدم خبرة بناء السفن الهولندية.",
+      aboutHeading: "منذ 1937، نقدم خبرة بناء السفن الهولندية.",
       aboutParagraphs: [
         "بعض الإرث يُورَث. وبعضه يُبنى.",
         "بدأ إرثنا قبل أكثر من 85 عامًا على ممرات المياه في هولندا، حيث اكتسب جدّنا، السيد تينمانس الأكبر، سمعته كحرفي ماهر في بناء سفن الشحن الداخلية الخشبية. كل عارضة شكّلها وكل سفينة أتمّها عكست قيمًا لا يمكن تصنيعها. التفاني والنزاهة والدقة والفخر بالعمل.",
@@ -664,8 +664,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           caption: "حوض بناء السفن العائلي في ماسبراخت",
         },
         {
-          alt: "قارب عمل تاريخي من Tinnemans أمام حوض بناء السفن العائلي الذي تأسس عام 1941 في ماسبراخت",
-          caption: "بناه حوض بناء السفن العائلي الذي تأسس عام 1941",
+          alt: "قارب عمل تاريخي من Tinnemans أمام حوض بناء السفن العائلي الذي تأسس عام 1937 في ماسبراخت",
+          caption: "بناه حوض بناء السفن العائلي الذي تأسس عام 1937",
         },
       ],
       story: { label: "تراثنا", title: "أكثر من 80 عامًا من الحرفية الهولندية" },
@@ -711,7 +711,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       workshopCaptions: ["لحام دقيق", "الهندسة وCNC", "التجميع النهائي"],
       numbersLabel: "حقائق عن الشركة",
       numbers: [
-        { value: "1941", label: "إرث هولندي في بناء السفن" },
+        { value: "1937", label: "إرث هولندي في بناء السفن" },
         { value: "30+", label: "عامًا في بناء قوارب الألمنيوم" },
         { value: "سقف واحد", label: "التصميم والهندسة والبناء والاختبار" },
         { value: "فريد", label: "كل سفينة مبنية لمهمتها" },
