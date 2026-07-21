@@ -168,7 +168,7 @@ export function QuoteForm({ locale }: { locale: Locale }) {
             </div>
             <div className="contact-location-details">
               <span>{copy.location}</span>
-              <strong>Tinn Silver</strong>
+              <strong>TSFFR</strong>
               <address>
                 Industrieweg 18<br />
                 6051 AE Maasbracht, Netherlands
