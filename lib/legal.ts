@@ -2,7 +2,7 @@ export const legalContact = {
   companyName: "Tinn Silver Fire Fighting and Rescue B.V.",
   legalForm: "Besloten Vennootschap (B.V.)",
   director:
-    "Nimaso Group GmbH (als im Handelsregister eingetragene Geschäftsführerin)",
+    "n.g GmbH (als im Handelsregister eingetragene Geschäftsführerin)",
   street: "Industrieweg 18",
   postalCode: "6051 AE",
   city: "Maasbracht",

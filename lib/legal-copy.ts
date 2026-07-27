@@ -12,10 +12,10 @@ const contact = (labels: { phone: string; email: string; website: string }, coun
   `${address(country)}\n\n${labels.phone}: ${legalContact.phone}\n${labels.email}: ${legalContact.email}\n${labels.website}: ${legalContact.website}`;
 
 const directors: Record<Locale, string> = {
-  en: "Nimaso Group GmbH (registered in the commercial register as managing director)",
+  en: "n.g GmbH (registered in the commercial register as managing director)",
   de: legalContact.director,
-  nl: "Nimaso Group GmbH (in het handelsregister ingeschreven als bestuurder)",
-  ar: "Nimaso Group GmbH (مسجلة في السجل التجاري بصفتها المديرة)",
+  nl: "n.g GmbH (in het handelsregister ingeschreven als bestuurder)",
+  ar: "n.g GmbH (مسجلة في السجل التجاري بصفتها المديرة)",
 };
 
 export const imprintCopy: Record<Locale, LegalDocumentCopy> = {
