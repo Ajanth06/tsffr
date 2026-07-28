@@ -122,6 +122,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       { label: "Process", href: "/process" },
       { label: "Project", href: "/project" },
       { label: "Contact", href: "/contact" },
+      { label: "News", href: "/news" },
     ],
     aboutNav: [
       { label: "Story", href: "#story" },
@@ -285,6 +286,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       { label: "Prozess", href: "/process" },
       { label: "Projekt", href: "/project" },
       { label: "Kontakt", href: "/contact" },
+      { label: "News", href: "/news" },
     ],
     aboutNav: [
       { label: "Geschichte", href: "#story" },
@@ -448,6 +450,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       { label: "Proces", href: "/process" },
       { label: "Project", href: "/project" },
       { label: "Contact", href: "/contact" },
+      { label: "Nieuws", href: "/news" },
     ],
     aboutNav: [
       { label: "Verhaal", href: "#story" },
@@ -611,6 +614,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       { label: "العملية", href: "/process" },
       { label: "المشروع", href: "/project" },
       { label: "اتصل بنا", href: "/contact" },
+      { label: "الأخبار", href: "/news" },
     ],
     aboutNav: [
       { label: "القصة", href: "#story" },
