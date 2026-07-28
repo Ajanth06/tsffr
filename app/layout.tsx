@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteFooter } from "./components/site-footer";
 import { getDictionary, getLocale } from "../lib/i18n";
 import { isRtlLocale } from "../lib/locale";
+import { SITE_URL } from "../lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,8 +21,26 @@ export async function generateMetadata(): Promise<Metadata> {
   const { meta } = getDictionary(locale);
 
   return {
+    metadataBase: new URL(SITE_URL),
+    applicationName: "Tinn Silver",
     title: meta.homeTitle,
     description: meta.homeDescription,
+    robots: {
+      index: true,
+      follow: true,
+    },
+    openGraph: {
+      type: "website",
+      url: SITE_URL,
+      siteName: "Tinn Silver",
+      title: meta.homeTitle,
+      description: meta.homeDescription,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: meta.homeTitle,
+      description: meta.homeDescription,
+    },
   };
 }
 
