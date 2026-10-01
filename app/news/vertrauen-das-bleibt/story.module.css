@@ -7,6 +7,8 @@
 .eyebrow { color: #596572; margin: 0 0 24px; }
 .header h1 { font-size: clamp(64px, 10vw, 140px); line-height: .98; letter-spacing: -.065em; font-weight: 500; margin: 0; }
 .header h1 span { color: #6b7b86; }
+.story[dir="rtl"] h1, .story[dir="rtl"] h2 { letter-spacing: 0; line-height: 1.35; }
+.story[dir="rtl"] .eyebrow, .story[dir="rtl"] .personRole { letter-spacing: 0; }
 .subtitle { margin: 32px 0 0; font-size: clamp(18px, 2vw, 24px); }
 .hero { max-width: 1200px; margin: 0 auto; }
 .hero img { display: block; width: 100%; height: auto; }
