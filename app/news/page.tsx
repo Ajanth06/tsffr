@@ -4,6 +4,7 @@ import Link from "next/link";
 import { StandaloneHeader } from "../components/standalone-header";
 import { getDictionary, getLocale, type Locale } from "../../lib/i18n";
 import { formatNewsDate, getNewsArticle } from "../../lib/news";
+import { trustNews } from "../../lib/trust-news";
 
 const newsCopy = {
   en: {
@@ -90,6 +91,20 @@ export default async function NewsPage() {
             <span aria-hidden="true">01</span>
             {copy.sectionLabel}
           </h2>
+          <div style={{ display: "grid", gap: "72px", minWidth: 0 }}>
+          <article className="news-card" lang="de" dir="ltr">
+            <Link className="news-card-image" href={trustNews.href}>
+              <Image src={trustNews.image} alt="Handschlag am Tinn-Silver-Messestand auf der Interboot" width={2048} height={1536} sizes="(max-width: 800px) calc(100vw - 48px), 66vw" preload />
+            </Link>
+            <div className="news-card-body">
+              <time dateTime={trustNews.date}>{formatNewsDate("de", trustNews.date)}</time>
+              <div>
+                <h3>{trustNews.title}</h3>
+                <p>{trustNews.intro}</p>
+                <Link className="news-card-link" href={trustNews.href}>Mehr erfahren <svg viewBox="0 0 42 14" aria-hidden="true"><path d="M1 7h38M34 2l5 5-5 5" /></svg></Link>
+              </div>
+            </div>
+          </article>
           <article className="news-card">
             <div className="news-card-image">
               <Image
@@ -98,7 +113,6 @@ export default async function NewsPage() {
                 width={1500}
                 height={2000}
                 sizes="(max-width: 800px) calc(100vw - 48px), 66vw"
-                preload
               />
             </div>
             <div className="news-card-body">
@@ -117,6 +131,7 @@ export default async function NewsPage() {
               </div>
             </div>
           </article>
+          </div>
         </div>
       </section>
     </main>

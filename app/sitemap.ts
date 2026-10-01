@@ -43,6 +43,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: absoluteUrl("/news/vertrauen-das-bleibt"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: absoluteUrl(`/news/${NEWS_ARTICLE_SLUG}`),
       lastModified,
       changeFrequency: "monthly",

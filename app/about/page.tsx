@@ -93,6 +93,7 @@ export default async function AboutPage() {
               />
             </div>
             <div className="about-story-caption">
+              <p><strong style={{ textDecoration: "underline", textUnderlineOffset: "4px" }}>Jan Tinnemans</strong></p>
               <p>
                 {t.storyCaption}
                 <br />
