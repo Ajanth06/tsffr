@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { StandaloneHeader } from "../components/standalone-header";
 import { getDictionary, getLocale } from "../../lib/i18n";
+import { vesselProjects } from "../../lib/projects";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -45,34 +46,39 @@ export default async function ProjectPage() {
         </div>
       </section>
 
-      <section className="project-concept" aria-labelledby="project-concept-title">
+      <section className="project-index" aria-labelledby="project-index-title">
         <div className="about-shell">
-          <header className="project-concept-heading">
-            <p className="section-label">{t.values.label}</p>
-            <h2 id="project-concept-title">{t.values.title}</h2>
+          <header className="project-index-heading">
+            <p className="section-label">{dict.project.listLabel}</p>
+            <div>
+              <h2 id="project-index-title">{dict.project.listTitle}</h2>
+              <p>{dict.project.listLead}</p>
+            </div>
           </header>
 
-          <div className="project-matrix">
-            {t.valueCards.map((value, index) => (
-              <article
-                className={`project-principle project-principle--${index + 1}`}
-                key={value.title}
-              >
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                <h3>{value.title}</h3>
-                <p>{value.text}</p>
-              </article>
+          <ol className="project-index-list">
+            {vesselProjects.map((project, index) => (
+              <li key={project.slug}>
+                <Link
+                  href={`/projects/${project.slug}`}
+                  aria-label={`${dict.project.viewProject}: ${dict.project.projectNames[index]}`}
+                  prefetch={false}
+                >
+                  <span className="project-index-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="project-index-name">
+                    {dict.project.projectNames[index]}
+                  </span>
+                  <span className="project-index-action" aria-hidden="true">
+                    {dict.project.viewProject} <i>↗</i>
+                  </span>
+                </Link>
+              </li>
             ))}
+          </ol>
 
-            <div className="project-core" aria-hidden="true">
-              <div className="project-core-ring project-core-ring--outer" />
-              <div className="project-core-ring project-core-ring--inner" />
-              <i /><i />
-              <span>TSFFR</span>
-            </div>
-          </div>
-
-          <footer className="project-concept-footer">
+          <footer className="project-index-footer">
             <p>{t.quote}</p>
             <Link href="/contact#quote-form">{t.ctaQuote}</Link>
           </footer>

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { NEWS_ARTICLE_SLUG } from "../lib/news";
+import { vesselProjects } from "../lib/projects";
 import { absoluteUrl } from "../lib/site";
 
 const lastModified = new Date("2026-07-28T00:00:00.000Z");
@@ -36,6 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    ...vesselProjects.map((project) => ({
+      url: absoluteUrl(`/projects/${project.slug}`),
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
     {
       url: absoluteUrl("/news"),
       lastModified,
