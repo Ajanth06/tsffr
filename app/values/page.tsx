@@ -240,7 +240,7 @@ export default async function ValuesPage() {
                             aria-label={copy.videoCaption}
                           >
                             <source
-                              src="/gallery/dlrg-rescue-boat-540.mov"
+                              src="/gallery/dlrg-rescue-boat-720.mp4"
                               type="video/mp4"
                             />
                             <source
